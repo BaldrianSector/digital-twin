@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+  justify-items: start;
+}
+
+.special-elite-regular {
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  border: 1px solid hsl(200, 100%, 100%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  outline: white;
+}
+
+.btn:is(:hover, :focus) {
+  background-color: white;
+  color: black;
+}
+
+.no-next-node {
+  background-color: indianred;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+body {
+  min-height: 100dvh;
+  font-family: "JetBrains Mono", sans-serif;
+  color: white;
+  background-color: black;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: white;
+  background-color: black;
+  padding: 0 20px;
+}
+
+header {
+  gap: 100px;
+}
