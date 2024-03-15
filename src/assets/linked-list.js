@@ -7,7 +7,7 @@ let state = {}
 
 function startGame() {
     state = {}
-    textNodes.forEach(node => node.visited = false) // Reset visited state
+    textNodes.forEach(node => node.visited = false) // Reset visited states
     showTextNode(1)
     clearOptions()
 }
@@ -19,47 +19,70 @@ function showTextNode(textNodeIndex) {
         clearTimeout(currentTimeout);
     }
 
-    const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
-    const text = textNode.text
-    let index = 0
+    const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
+    const markdownText = textNode.text;
+    const parsedHTML = marked.parse(markdownText); // Parse the markdown to HTML
     
-    function displayText() {
-        if (instant) {
-            textElement.innerText = text;
-            textNode.visited = true; // Set visited to true after the text is fully displayed
-            setTimeout(() => displayOptions(textNode.options), 0); // Delay the call to displayOptions
-        } else {
-            textElement.innerText = text.substring(0, index);
+    textElement.innerHTML = parsedHTML; // Temporarily set the parsed HTML to measure it
+
+    // Wrap each character in the textElement with a span that hides it
+    Array.from(textElement.childNodes).forEach(child => {
+        if (child.nodeType === Node.TEXT_NODE) {
+            const spanWrapper = document.createElement('span');
+            spanWrapper.innerHTML = child.nodeValue.replace(/./g, "<span class='hidden'>$&</span>");
+            child.replaceWith(spanWrapper);
+        } else if (child.nodeType === Node.ELEMENT_NODE) {
+            wrapTextInSpan(child);
+        }
+    });
+
+    let hiddenSpans = textElement.querySelectorAll('.hidden');
+    let index = 0;
+
+    function displayNextCharacter() {
+        if (index < hiddenSpans.length) {
+            hiddenSpans[index].classList.remove('hidden');
             index++;
-            if (index <= text.length) {
-                currentTimeout = setTimeout(displayText, 50); // Adjust the delay (in milliseconds) between each letter
-            } else {
-                textNode.visited = true; // Set visited to true after the text is fully displayed
-                displayOptions(textNode.options);
-            }
+            currentTimeout = setTimeout(displayNextCharacter, 50);
+        } else {
+            textNode.visited = true;
+            displayOptions(textNode.options);
         }
     }
-    
-    function displayOptions(options) {
-        clearOptions();
-        
-        options.forEach(option => {
-            if (showOption(option)) {
-                const button = document.createElement('button');
-                button.innerText = option.text;
-                button.classList.add('btn');
-                button.tabIndex = 0; // Make button focusable
-                button.addEventListener('click', () => selectOption(option));
-                optionButtonsElement.appendChild(button);
-                
-                if (option.nextNode < 0) {
-                    button.classList.add('no-next-node'); // Add a custom CSS class to the button
-                }
-            }
-        });
-    }
 
-    displayText();
+    if (instant) {
+        hiddenSpans.forEach(span => span.classList.remove('hidden'));
+        textNode.visited = true;
+        setTimeout(() => displayOptions(textNode.options), 0);
+    } else {
+        displayNextCharacter();
+    }
+}
+
+function wrapTextInSpan(element) {
+    Array.from(element.childNodes).forEach(child => {
+        if (child.nodeType === Node.TEXT_NODE) {
+            const spanWrapper = document.createElement('span');
+            spanWrapper.innerHTML = child.nodeValue.replace(/./g, "<span class='hidden'>$&</span>");
+            child.replaceWith(spanWrapper);
+        } else if (child.nodeType === Node.ELEMENT_NODE) {
+            wrapTextInSpan(child);
+        }
+    });
+}
+
+function displayOptions(options) {
+    clearOptions();
+
+    options.forEach(option => {
+        if (showOption(option)) {
+            const button = document.createElement('button');
+            button.innerText = option.text;
+            button.classList.add('btn'); // Ensure you have 'btn' class styled in your CSS
+            button.addEventListener('click', () => selectOption(option));
+            optionButtonsElement.appendChild(button);
+        }
+    });
 }
 
 function showOption(option) {
@@ -85,7 +108,7 @@ function clearOptions() {
 const textNodes = [
     {
         id: 1,
-        text: 'Welcome to my interactive page. What would you like to know about?',
+        text: 'Welcome to **my interactive page**. *What would you like to know about?*<br>[Duck Duck Go](https://duckduckgo.com)',
         options: [
             {
                 text: 'Your Photography Journey',
