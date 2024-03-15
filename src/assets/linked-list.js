@@ -20,7 +20,7 @@ function showTextNode(textNodeIndex) {
     }
 
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
-    const markdownText = textNode.text;
+    const markdownText = textNode.text
     const parsedHTML = marked.parse(markdownText); // Parse the markdown to HTML
     
     textElement.innerHTML = parsedHTML; // Temporarily set the parsed HTML to measure it
@@ -108,7 +108,7 @@ function clearOptions() {
 const textNodes = [
     {
         id: 1,
-        text: 'Welcome to **my interactive page**. *What would you like to know about?*<br>[Duck Duck Go](https://duckduckgo.com)',
+        text: 'Welcome to my interactive page. *What would you like to know about?*',
         options: [
             {
                 text: 'Your Photography Journey',
@@ -241,7 +241,7 @@ const textNodes = [
     },
     {
         id: 31,
-        text: 'For sure! \n\nHere is a link to some of my favorite photos I took during my trip:\nhttps://www.facebook.com/BaldrianSector/posts/10228912409504335',
+        text: 'For sure! <br/><br/>[These are some of my favorite photos I took during my trip.](https://www.facebook.com/BaldrianSector/posts/10228912409504335)',
         options: [
             {
                 text: 'I want to know more.',
@@ -260,7 +260,7 @@ const textNodes = [
     },
     {
         id: 311,
-        text: 'I mostly share my pictures on Instagram. Follow me at https://www.instagram.com/baldrian.jpeg/',
+        text: 'I mostly share my pictures on Instagram. Follow me at [@baldrian.jpeg](https://www.instagram.com/baldrian.jpeg/)',
         options: [
             {
                 text: 'I want to know more.',
@@ -301,7 +301,7 @@ const textNodes = [
     },
     {
         id: 16,
-        text: 'The best way to reach me is through my email: Baldriansector@gmail.com \n\nYou could also try to message me on Instagram at @baldrian.jpeg, but not that some messages get filtered out.',
+        text: 'The best way to reach me is through my email: [baldriansector@gmail.com](mailto:baldriansector@gmail.com) <br/><br/>You could also try to message me on Instagram at [@baldrian.jpeg](https://www.instagram.com/baldrian.jpeg/), but not that some messages get filtered out.',
         options: [
             {
                 text: 'Ok I understand. Thank you!',
@@ -369,7 +369,7 @@ const textNodes = [
     },
     {
         id: 122,
-        text: 'Oh yes I do! I a big fan of puzzle games as you might have guessed.\nI believe playing teaches us a lot about ourselves. ',
+        text: 'Oh yes I do! I am big fan of puzzle games as you might have guessed.<br/>I believe playing teaches us a lot about ourselves. ',
         options: [
             {
                 text: 'Do you have any recommendations?',
@@ -388,7 +388,7 @@ const textNodes = [
     },
     {
         id: 1222,
-        text: 'Here is a list of my all-time favorite games: \n\nThe Witness \nThe Talos Principle \nPortal 2 \nThe Stanley Parable \nKeep Talking and Nobody Explodes \n\nEach game offers a unique experience that challenges the mind and encourages creative problem-solving. I have spent countless hours playing each one of them and I highly recommend them to anyone who enjoys a good mental workout or a cooperative tag-team challenge.',
+        text: 'Here is a list of my all-time favorite games: <br/><br/>[The Witness](https://store.steampowered.com/app/210970/The_Witness/) <br/>[The Talos Principle](https://store.steampowered.com/app/257510/The_Talos_Principle/) <br/>[The Talos Principle 2](https://store.steampowered.com/app/835960/The_Talos_Principle_2/) <br/>[The Stanley Parable](https://store.steampowered.com/app/221910/The_Stanley_Parable/) <br/>[Portal](https://store.steampowered.com/app/400/Portal/) <br/>[Portal 2](https://store.steampowered.com/app/620/Portal_2/) <br/>[Keep Talking and Nobody Explodes](https://store.steampowered.com/app/341800/Keep_Talking_and_Nobody_Explodes/) <br/><br/>Each game offers a unique experience that challenges the mind and encourages creative problem-solving. I have spent countless hours playing each one of them and I highly recommend them to anyone who enjoys a good mental workout or a cooperative tag-team challenge.',
         options: [
             {
                 text: 'How did you get into playing computer games?',
@@ -403,7 +403,7 @@ const textNodes = [
     },
     {
         id: 1221,
-        text: 'I started playing computer games at a young age when my farther built me my first computer, and it has been a part of my life ever since. My father has lived in Copenhagen and I grew up on Bornholm, so it was a way for us to stay connected. We played World of Warcraft together for many years. \n\nIt ignited my passion for gaming and has been a source of joy and inspiration ever since. You probalby would not be reading this if it was not for my love playing.',
+        text: 'I started playing computer games at a young age when my father built me my first computer, and it has been a part of my life ever since. My father has lived in Copenhagen, and I grew up on Bornholm, so it was a way for us to stay connected. We played World of Warcraft together for many years. <br/><br/>It ignited my passion for gaming and has been a source of joy and an amazing way to connect with friends and family ever since. I think games can be a form of art that we can draw upon for inspiration and teach us about ourselves. You probably would not be reading this if it was not for my love of playing.',
         options: [
             {
                 text: 'Do you have any recommendations?',
