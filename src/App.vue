@@ -21,7 +21,7 @@ import HelloWorld from './components/HelloWorld.vue'
   </header>
 </template>
 
-<style scoped>
+<style>
 header {
   font-size: 15px;
   line-height: 1.5;
@@ -84,4 +84,5 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
+
 </style>

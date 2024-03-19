@@ -43,7 +43,7 @@ function showTextNode(textNodeIndex) {
         if (index < hiddenSpans.length) {
             hiddenSpans[index].classList.remove('hidden');
             index++;
-            currentTimeout = setTimeout(displayNextCharacter, 50);
+            currentTimeout = setTimeout(displayNextCharacter, 42); // Adjust the speed of the text here
         } else {
             textNode.visited = true;
             displayOptions(textNode.options);
@@ -241,7 +241,7 @@ const textNodes = [
     },
     {
         id: 31,
-        text: 'For sure! <br/><br/>[These are some of my favorite photos I took during my trip.](https://www.facebook.com/BaldrianSector/posts/10228912409504335)',
+        text: 'For sure! <br/><br/> ![View of Tokyo from Tokyo Skytree](src/assets/images/East-Asia/Tokyo.JPG)',
         options: [
             {
                 text: 'I want to know more.',
@@ -388,7 +388,7 @@ const textNodes = [
     },
     {
         id: 1222,
-        text: 'Here is a list of my all-time favorite games: <br/><br/>[The Witness](https://store.steampowered.com/app/210970/The_Witness/) <br/>[The Talos Principle](https://store.steampowered.com/app/257510/The_Talos_Principle/) <br/>[The Talos Principle 2](https://store.steampowered.com/app/835960/The_Talos_Principle_2/) <br/>[The Stanley Parable](https://store.steampowered.com/app/221910/The_Stanley_Parable/) <br/>[Portal](https://store.steampowered.com/app/400/Portal/) <br/>[Portal 2](https://store.steampowered.com/app/620/Portal_2/) <br/>[Keep Talking and Nobody Explodes](https://store.steampowered.com/app/341800/Keep_Talking_and_Nobody_Explodes/) <br/><br/>Each game offers a unique experience that challenges the mind and encourages creative problem-solving. I have spent countless hours playing each one of them and I highly recommend them to anyone who enjoys a good mental workout or a cooperative tag-team challenge.',
+        text: 'Here is a list of my all-time favorite games: <br/><br/>- [The Witness](https://store.steampowered.com/app/210970/The_Witness/) <br/>- [The Talos Principle](https://store.steampowered.com/app/257510/The_Talos_Principle/) <br/>- [The Talos Principle 2](https://store.steampowered.com/app/835960/The_Talos_Principle_2/) <br/>- [The Stanley Parable](https://store.steampowered.com/app/221910/The_Stanley_Parable/) <br/>- [Portal](https://store.steampowered.com/app/400/Portal/) <br/>- [Portal 2](https://store.steampowered.com/app/620/Portal_2/) <br/>- [Keep Talking and Nobody Explodes](https://store.steampowered.com/app/341800/Keep_Talking_and_Nobody_Explodes/) <br/><br/>Each game offers a unique experience that challenges the mind and encourages creative problem-solving. I have spent countless hours playing each one of them and I highly recommend them to anyone who enjoys a good mental workout or a cooperative tag-team challenge.',
         options: [
             {
                 text: 'How did you get into playing computer games?',
