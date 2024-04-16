@@ -38,6 +38,7 @@ a,
   padding: 5px 10px;
   color: white;
   outline: white;
+  user-select: none;
 }
 
 .btn:is(:hover, :focus) {
@@ -133,6 +134,7 @@ p {
 
 .nav-btn {
   cursor: pointer;
+  font-weight: bold;
 }
 
 @keyframes blink-animation {

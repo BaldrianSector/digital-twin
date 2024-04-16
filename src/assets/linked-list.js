@@ -1,4 +1,4 @@
-let instant = true; // Set to true to display all text instantly
+let instant = false; // Set to true to display all text instantly
 
 const textElement = document.getElementById('text')
 const optionButtonsElement = document.getElementById('option-buttons')
@@ -8,7 +8,6 @@ const navigationEl = document.getElementById('navigation');
 console.log(navigationEl);
 
 let navigationLinks = [
-    {text: "home", link: 1},
     {text: "introduction", link: 0},
 
 ]
@@ -142,11 +141,22 @@ function displayOptions(options, inputFields) {
             inputWrapper.appendChild(input);
             optionButtonsElement.appendChild(inputWrapper);
             input.setAttribute('autocomplete', 'off');
+
+            // Execute a function when the user presses a key on the keyboard
+            input.addEventListener("keypress", function(event) {
+                // If the user presses the "Enter" key on the keyboard
+                if (event.key === "Enter") {
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Trigger the button element with a click
+                document.querySelector(".submit-btn").click();
+                }
+            });
         });
 
         const submitButton = document.createElement('button');
         submitButton.innerText = "Submit";
-        submitButton.classList.add('btn');
+        submitButton.classList.add('btn', 'submit-btn');
         submitButton.addEventListener('click', () => collectInputData(inputFields));
         optionButtonsElement.appendChild(submitButton);
     } else {
@@ -241,13 +251,9 @@ const textNodes = [
                 nextNode: 12
             },
             {
-                text: `Your Contact Information`,
+                text: `How can I reach you?`,
                 nextNode: 16
             },
-            {
-                text: `Lets get in contact.`,
-                nextNode: 1234
-            }
         ],
         visited: false,
     },
