@@ -139,3 +139,17 @@ p {
   0%, 49.999%, 100% { opacity: 1; }
   50%, 99.999% { opacity: 0; }
 }
+
+/* Selection color */
+
+/* Text selection color for modern browsers */
+::selection {
+  background-color: white; /* Example highlight color */
+  color: #0a0a0a; /* Example text color */
+}
+
+/* Text selection color for Firefox */
+::-moz-selection {
+  background-color: white; /* Example highlight color */
+  color: #0a0a0a; /* Example text color */
+}
