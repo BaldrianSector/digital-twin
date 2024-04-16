@@ -141,6 +141,7 @@ function displayOptions(options, inputFields) {
             input.autofocus = true;
             inputWrapper.appendChild(input);
             optionButtonsElement.appendChild(inputWrapper);
+            input.setAttribute('autocomplete', 'off');
         });
 
         const submitButton = document.createElement('button');
