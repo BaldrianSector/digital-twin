@@ -126,6 +126,7 @@ p {
   opacity: 1;
   background: white;
   border: 1px solid white;
+  user-select: none;
 }
 
 .blink {

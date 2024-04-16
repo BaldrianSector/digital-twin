@@ -8,6 +8,7 @@ const navigationEl = document.getElementById('navigation');
 console.log(navigationEl);
 
 let navigationLinks = [
+    {text: "home", link: 1},
     {text: "introduction", link: 0},
 
 ]
@@ -19,7 +20,7 @@ function updateNavigationLinks(node) {
         console.log(navigationLinks);
     } else {
         console.log("Updating navigation links");
-        navigationLinks = [navigationLinks[0], ...node.navLinks.slice(1)];
+        navigationLinks = [navigationLinks[0], ...node.navLinks.slice(0)];
     }
 }
 
