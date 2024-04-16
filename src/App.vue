@@ -5,12 +5,12 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <div class="container">
-      <p>/HOME/ABOUT/</p>
+    <div id="navigation" class="container">
     </div>
     <div class="container">
-      <p id="text" class="relative w-[800px] max-w-2xl font-mono text-left leading-6">This is the text area.</p>
-      <br>
+      <div class="w-[800px] max-w-2xl font-mono flex">
+        <p id="text" class="text-left leading-6 inline-block">This is the text area.</p>
+      </div>
       <div id="option-buttons" class="btn-grid">
         <button class="btn">Option 1</button>
         <button class="btn">Option 2</button>
@@ -84,5 +84,4 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
-
 </style>

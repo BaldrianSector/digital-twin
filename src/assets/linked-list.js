@@ -2,9 +2,30 @@ let instant = false; // Set to true to display all text instantly
 
 const textElement = document.getElementById('text')
 const optionButtonsElement = document.getElementById('option-buttons')
+const cursorSpan = textElement.querySelector('.cursor');
+const navigationEl = document.getElementById('navigation');
+
+console.log(navigationEl);
+
+let navigationLinks = [
+    {text: "home", link: 1},
+    {text: "introduction", link: 0},
+
+]
+
+function updateNavigationLinks(node) {
+    if (node.navLinks[0].text === "home") {
+        console.log("Resetting navigation links");
+        navigationLinks = node.navLinks;
+        console.log(navigationLinks);
+    } else {
+        console.log("Updating navigation links");
+        navigationLinks = [navigationLinks[0], ...node.navLinks.slice(1)];
+    }
+}
 
 let user = { 
-    name: undefined,
+    name: "",
     email: undefined,
     age: undefined,
 }
@@ -14,7 +35,8 @@ let state = {}
 function startGame() {
     state = {}
     textNodes.forEach(node => node.visited = false) // Reset visited states
-    showTextNode(1)
+    showTextNode(0)
+    updateNavigationEl() // Initial update
     clearOptions()
 }
 
@@ -27,10 +49,15 @@ function showTextNode(textNodeIndex) {
 
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
 
+    if (textNode.navLinks) {
+        updateNavigationLinks(textNode);
+        updateNavigationEl()
+    }
+
     const markdownText = (typeof textNode.text === "function") ? textNode.text() : textNode.text; // Check if the text is a function and call it if it is, to allow for dynamic text
     
     const parsedHTML = marked.parse(markdownText); // Parse the markdown to HTML
-    
+
     textElement.innerHTML = parsedHTML; // Temporarily set the parsed HTML to measure it
 
     textElement.querySelectorAll('img').forEach(img => {
@@ -51,20 +78,31 @@ function showTextNode(textNodeIndex) {
     let hiddenSpans = textElement.querySelectorAll('.hidden');
     let index = 0;
 
+    const cursorSpan = document.createElement('span');
+    cursorSpan.classList.add('cursor');
+    cursorSpan.textContent = '|'; // Cursor symbol
+    textElement.appendChild(cursorSpan);
+
     function displayNextCharacter() {
+
+        cursorSpan.classList.remove('blink'); // Stop blinking when typing starts
+
         if (index < hiddenSpans.length) {
             hiddenSpans[index].classList.remove('hidden');
             index++;
-            currentTimeout = setTimeout(displayNextCharacter, 42); // Adjust the speed of the text here
+            currentTimeout = setTimeout(displayNextCharacter, 42);
         } else {
             textNode.visited = true;
             displayOptions(textNode.options, textNode.inputFields);
+            cursorSpan.classList.add('blink');
         }
     }
 
+    // Ensure you also handle the 'instant' case by adding/removing the blink class appropriately
     if (instant) {
         hiddenSpans.forEach(span => span.classList.remove('hidden'));
         textNode.visited = true;
+        cursorSpan.classList.add('blink'); // Resume blinking immediately for instant display
         setTimeout(() => displayOptions(textNode.options), 0);
     } else {
         displayNextCharacter();
@@ -89,12 +127,16 @@ function displayOptions(options, inputFields) {
     if (inputFields) {
         inputFields.forEach(field => {
             const inputWrapper = document.createElement('div');
-            const label = document.createElement('label');
-            label.innerText = field.label + ": ";
+            inputWrapper.classList.add('text-left');
+            if (field.label !== undefined) {
+                const label = document.createElement('label');
+                label.innerText = field.label + ": ";
+                inputWrapper.appendChild(label);
+            }
             const input = document.createElement('input');
             input.type = field.type;
             input.id = field.key;
-            inputWrapper.appendChild(label);
+            input.autofocus = true;
             inputWrapper.appendChild(input);
             optionButtonsElement.appendChild(inputWrapper);
         });
@@ -122,6 +164,8 @@ function collectInputData(inputFields) {
         const inputElement = document.getElementById(field.key);
         user[field.key] = inputElement.value; // Store the data in user object
     });
+
+    console.log(user);
 
     // Find the current node based on the inputFields provided (assuming it's unique in this context)
     const currentNode = textNodes.find(node => node.inputFields === inputFields);
@@ -157,13 +201,28 @@ function clearOptions() {
     }
 }
 
+function updateNavigationEl() {
+    navigationEl.innerHTML = '';
+    navigationLinks.forEach(element => {
+        const navButton = document.createElement('p');
+        navButton.innerText = '/' + element.text;
+        navButton.classList.add('nav-btn');
+        navButton.addEventListener('click', () => {
+            showTextNode(element.link);
+            clearOptions();
+        });
+        navigationEl.appendChild(navButton);
+    });
+}
+
 const textNodes = [
     {
         id: 1,
-        text: `Welcome ${user.name} to my interactive page. *What would you like to know about?*`,
+        text: () => `Welcome ${user.name} to my interactive page. *What would you like to know about?*`,
+        navLinks: [{text: "home", link: 111}],
         options: [
             {
-                text: `Your Photography ${user.name} Journey`,
+                text: `Your Photography Journey`,
                 nextNode: 2
             },
             {
@@ -187,11 +246,12 @@ const textNodes = [
                 nextNode: 1234
             }
         ],
-        visited: false
+        visited: false,
     },
     {
         id: 111,
         text: () => `Welcome back ${user.name}. What more would you like to know about?`,
+        navLinks: [{text: "home", link: 111}],
         options: [
             {
                 text: `Your Photography Journey`,
@@ -219,6 +279,7 @@ const textNodes = [
     {
         id: 2,
         text: `Anything specific you would like to know?`,
+        navLinks: [{text: "hobbies", link: 12}, {text: `photography`, link: 2},],
         options: [
             {
                 text: `Your gear and travels`,
@@ -234,6 +295,7 @@ const textNodes = [
     {
         id: 4,
         text: `Sure. I have worked in the theater industry since forever.`,
+        navLinks: [{text: "theater", link: 4}],
         options: [
             {
                 text: `Tell me about your experiences`,
@@ -249,6 +311,7 @@ const textNodes = [
     {
         id: 8,
         text: `Sure!`,
+        navLinks: [{text: "academics", link: 8}],
         options: [
             {
                 text: `Talk about your studies`,
@@ -264,6 +327,7 @@ const textNodes = [
     {
         id: 12,
         text: `Oh yes, I do!`,
+        navLinks: [{text: "hobbies", link: 12}],
         options: [
             {
                 text: `Talk about your photography!`,
@@ -410,6 +474,7 @@ const textNodes = [
     {
         id: 121,
         text: `Bouldering has become more than just a hobby; it's a lifestyle that combines physical challenge with mental strategy. This sport has not only improved my physical health but has also provided a sanctuary where I can clear my mind and focus on the present moment. It's a test of strength, endurance, and problem-solving that keeps me coming back for more.`,
+        navLinks: [{text: "hobbies", link: 12}, {text: "sports", link: 121}],
         options: [
             {
                 text: `Tell me about your other hobbies.`,
@@ -425,6 +490,7 @@ const textNodes = [
     {
         id: 122,
         text: `Oh yes, I do! I am a big fan of puzzle games, as you might have guessed.<br/>I believe playing teaches us a lot about ourselves.`,
+        navLinks: [{text: "hobbies", link: 12}, {text: "games", link: 122}],
         options: [
             {
                 text: `Do you have any recommendations?`,
@@ -480,18 +546,26 @@ const textNodes = [
             {label: "Age", type: "number", key: "age"}
         ],
         options: [], // You might not have options for an input node
-        nextNode: 12345 // Optional: Specify the next node after submission
+        nextNode: 1 // Optional: Specify the next node after submission
     },
     {
         id: 12345,
-        text: () => `${user.name}, thank you for your information. I recorded that your email is ${user.email} and your age is ${user.age}. We will be in touch soon!`,
+        text: `${user.name}, thank you for your information. I recorded that your email is ${user.email} and your age is ${user.age}. We will be in touch soon!`,
         options: [
             {
                 text: `Take me back to the beginning.`,
-                nextNode: 111
+                nextNode: 12345
             }
         ],
         nextNode: 17 // Optional: Specify the next node after submission
+    },
+    {
+        id: 0,
+        text: `What should I call you?`,
+        inputFields: [
+            {type: "text", key: "name"},
+        ],
+        nextNode: 1
     }
 ];
 
