@@ -290,6 +290,10 @@ const textNodes = [
             {
                 text: `What is your approach to photography?`,
                 nextNode: 21
+            },
+            {
+                text: `Can I see some of your photos?`,
+                nextNode: 31
             }
         ],
         visited: false
@@ -350,10 +354,6 @@ const textNodes = [
         id: 3,
         text: `I acquired my Fujifilm X100V in 2022 to document my travels through Japan, Taiwan, South Korea, and Hong Kong.`,
         options: [
-            {
-                text: `Can I see some of the photos you took?`,
-                nextNode: 31
-            },
             {
                 text: `Take me back to the begining.`,
                 nextNode: 111
