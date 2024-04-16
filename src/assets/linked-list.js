@@ -1,4 +1,4 @@
-let instant = false; // Set to true to display all text instantly
+let instant = true; // Set to true to display all text instantly
 
 const textElement = document.getElementById('text')
 const optionButtonsElement = document.getElementById('option-buttons')
@@ -103,7 +103,9 @@ function showTextNode(textNodeIndex) {
         hiddenSpans.forEach(span => span.classList.remove('hidden'));
         textNode.visited = true;
         cursorSpan.classList.add('blink'); // Resume blinking immediately for instant display
-        setTimeout(() => displayOptions(textNode.options), 0);
+        setTimeout(() => {
+            displayOptions(textNode.options, textNode.inputFields);
+        }, 0);
     } else {
         displayNextCharacter();
     }
