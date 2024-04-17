@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 
-let instant = true; // Set to true to display all text instantly
+let instant = false; // Set to true to display all text instantly
 
 const textElement = document.getElementById('text')
 const optionButtonsElement = document.getElementById('option-buttons')
@@ -21,7 +21,7 @@ bootBtn.addEventListener('click', () => {
     setTimeout(() => {
         headerEl.classList.remove("hidden");
         startGame();
-    }, 3500);
+    }, 2700);
 });
 
 // Navigation links
@@ -135,7 +135,7 @@ function showTextNode(textNodeIndex) {
             }
     
             index++;
-            currentTimeout = setTimeout(displayNextCharacter, instant ? 0 : 42);
+            currentTimeout = setTimeout(displayNextCharacter, instant ? 0 : 32);
         } else {
             textNode.visited = true;
             displayOptions(textNode.options, textNode.inputFields);
