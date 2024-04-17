@@ -13,7 +13,7 @@ const cursorSpan = document.createElement('span');
 const bootBtn = document.getElementById('boot-btn');
 const bootContainer = document.getElementById('boot-container');
 bootBtn.addEventListener('click', () => {
-    bootContainer.style.transition = 'opacity 0.2s';
+    bootContainer.style.transition = 'opacity 0.3s';
     bootContainer.style.opacity = '0';
     setTimeout(() => {
         bootContainer.remove();
@@ -46,12 +46,13 @@ function updateNavigationEl() {
     navigationEl.innerHTML = '';
     navigationLinks.forEach(element => {
         const navButton = document.createElement('p');
-        navButton.innerText = '/' + element.text;
+        navButton.innerText = element.text;
         navButton.classList.add('nav-btn');
         navButton.addEventListener('click', () => {
             showTextNode(element.link);
             clearOptions();
         });
+        navigationEl.appendChild(document.createTextNode('/'));
         navigationEl.appendChild(navButton);
     });
 }

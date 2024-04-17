@@ -133,6 +133,12 @@ p {
   animation: blink-animation 1s steps(1, end) infinite;
 }
 
+.nav-btn:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
 .nav-btn {
   cursor: pointer;
   font-weight: bold;
