@@ -121,18 +121,33 @@ function showTextNode(textNodeIndex) {
     textElement.appendChild(cursorSpan);
 
     function displayNextCharacter() {
-
         cursorSpan.classList.remove('blink'); // Stop blinking when typing starts
-
+    
         if (index < hiddenSpans.length) {
             hiddenSpans[index].classList.remove('hidden');
+    
+            // Move the cursorSpan to follow the last revealed character
+            if (index < hiddenSpans.length - 1) {
+                hiddenSpans[index + 1].parentNode.insertBefore(cursorSpan, hiddenSpans[index + 1]);
+            } else {
+                // When all characters are revealed, append the cursor at the end
+                textElement.appendChild(cursorSpan);
+            }
+    
             index++;
-            currentTimeout = setTimeout(displayNextCharacter, 42);
+            currentTimeout = setTimeout(displayNextCharacter, instant ? 0 : 42);
         } else {
             textNode.visited = true;
             displayOptions(textNode.options, textNode.inputFields);
             cursorSpan.classList.add('blink');
         }
+    }
+
+    // Modify the initial append of cursorSpan
+    if (hiddenSpans.length > 0) {
+        hiddenSpans[0].parentNode.insertBefore(cursorSpan, hiddenSpans[0]);
+    } else {
+        textElement.appendChild(cursorSpan);
     }
 
     // Ensure you also handle the 'instant' case by adding/removing the blink class appropriately
@@ -143,6 +158,8 @@ function showTextNode(textNodeIndex) {
         setTimeout(() => {
             displayOptions(textNode.options, textNode.inputFields);
         }, 0);
+
+        textElement.appendChild(cursorSpan); // Move the cursorSpan to the end of the text string
     } else {
         displayNextCharacter();
     }
