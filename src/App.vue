@@ -1,24 +1,42 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { onMounted } from 'vue';
+import { gsap } from 'gsap'
+
+onMounted(() => {
+  gsap.from('.btn', { duration: 1, x: 0, opacity: 0, scale: 1, ease: 'back' });
+  gsap.from('#ascii-container', { duration: 6, x: 0, opacity: 0, scale: 1, ease: 'back' });
+  gsap.from('#boot-btn', {delay: 2, duration: 5, x: -50, opacity: 0, scale: 1, ease: 'power1'});
+});
+
 </script>
 
 <template>
-  <header>
-    <div id="navigation" class="container">
-    </div>
-    <div class="container">
-      <div class="w-[800px] max-w-2xl font-mono flex">
-        <p id="text" class="text-left leading-6 inline-block">This is the text area.</p>
+  <div>
+    <header id="header" class="hidden">
+      <div id="navigation" class="container">
       </div>
-      <div id="option-buttons" class="btn-grid">
-        <button class="btn">Option 1</button>
-        <button class="btn">Option 2</button>
-        <button class="btn">Option 3</button>
-        <button class="btn">Option 4</button>
+      <div class="container">
+        <div class="w-[800px] max-w-2xl font-mono flex">
+          <p id="text" class="text-left leading-6 inline-block">This is the text area.</p>
+        </div>
+        <div id="option-buttons" class="btn-grid">
+          <button class="btn">Option 1</button>
+          <button class="btn">Option 2</button>
+          <button class="btn">Option 3</button>
+          <button class="btn">Option 4</button>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
+</div>
+
+<div class="self-center">
+  <div id="boot-container" class="flex flex-col items-center">
+      <div id="ascii-container" class="shown"></div>
+      <button id="boot-btn" class="text-sm w-80 mt-10 hover:underline">Initiate boot up sequence</button>
+  </div>
+</div>
+
 </template>
 
 <style>

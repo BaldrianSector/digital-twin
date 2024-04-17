@@ -156,3 +156,7 @@ p {
   background-color: white; /* Example highlight color */
   color: #0a0a0a; /* Example text color */
 }
+
+#boot-btn {
+  opacity: 0.8;
+}

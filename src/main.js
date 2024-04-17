@@ -1,4 +1,7 @@
 import './assets/main.css'
+import './assets/ascii-art.css'
+
+import './assets/scripts/ascii-art.js'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'

@@ -1,0 +1,22 @@
+#ascii-container {
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+    white-space: pre-wrap; /* Maintains whitespace formatting */
+    
+    font-size: 10px; /* Adjust as necessary */
+    line-height: 10px; /* Adjust to match font size for tight line spacing */
+}
+
+.special-elite-regular {
+    font-family: "JetBrains Mono, monospace", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1px; /* Adjust this value to try to even out the spacing between characters */
+    display: inline-block;
+    width: 10px; /* Adjust this to fit the average character width of Special Elite */
+}
+
+.ascii-char {
+    display: inline-block;
+    width: 10px;  /* Adjust width as needed to match the desired spacing */
+    text-align: center;
+}
