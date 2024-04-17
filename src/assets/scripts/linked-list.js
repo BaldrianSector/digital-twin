@@ -435,7 +435,7 @@ const textNodes = [
     },
     {
         id: 31,
-        text: `For sure! <br/><br/> ![View of Tokyo from Tokyo Skytree](src/assets/images/East-Asia/Tokyo.JPG)`,
+        text: `![View of Tokyo from Tokyo Skytree](src/assets/images/East-Asia/Tokyo.JPG) <br/> This is one of my favorite photos from my trip to Japan. I took this shot from the Tokyo Skytree in November of 2023. The photo is unedited, straigt out of camera.`,
         options: [
             {
                 text: `I want to know more.`,
