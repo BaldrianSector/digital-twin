@@ -1,25 +1,27 @@
-let instant = false; // Set to true to display all text instantly
+import { gsap } from "gsap";
+
+let instant = true; // Set to true to display all text instantly
 
 const textElement = document.getElementById('text')
 const optionButtonsElement = document.getElementById('option-buttons')
-const cursorSpan = textElement.querySelector('.cursor');
 const navigationEl = document.getElementById('navigation');
 const headerEl = document.getElementById('header');
+const cursorSpan = document.createElement('span');
 
 // Bootup button
 
 const bootBtn = document.getElementById('boot-btn');
 const bootContainer = document.getElementById('boot-container');
 bootBtn.addEventListener('click', () => {
-    bootContainer.style.transition = 'opacity 3s';
+    bootContainer.style.transition = 'opacity 0.2s';
     bootContainer.style.opacity = '0';
     setTimeout(() => {
         bootContainer.remove();
-    }, 3000);
+    }, 1500);
     setTimeout(() => {
         headerEl.classList.remove("hidden");
         startGame();
-    }, 4500);
+    }, 3500);
 });
 
 // Navigation links
@@ -114,7 +116,6 @@ function showTextNode(textNodeIndex) {
     let hiddenSpans = textElement.querySelectorAll('.hidden');
     let index = 0;
 
-    const cursorSpan = document.createElement('span');
     cursorSpan.classList.add('cursor');
     cursorSpan.textContent = '|'; // Cursor symbol
     textElement.appendChild(cursorSpan);
@@ -181,14 +182,26 @@ function displayOptions(options, inputFields) {
             optionButtonsElement.appendChild(inputWrapper);
             input.setAttribute('autocomplete', 'off');
 
-            // Execute a function when the user presses a key on the keyboard
+            // Hide the cursor when the input is focused
+
+            input.addEventListener("focus", function() {
+                if (cursorSpan) {
+                    cursorSpan.style.visibility = 'hidden';
+                }
+            });
+
+            input.addEventListener("blur", function() {
+                if (cursorSpan) {
+                    cursorSpan.style.visibility = 'visible';
+                }
+            });
+
+            // Allow pressing Enter to submit the input
+
             input.addEventListener("keypress", function(event) {
-                // If the user presses the "Enter" key on the keyboard
                 if (event.key === "Enter") {
-                // Cancel the default action, if needed
-                event.preventDefault();
-                // Trigger the button element with a click
-                document.querySelector(".submit-btn").click();
+                    event.preventDefault();
+                    document.querySelector(".submit-btn").click();
                 }
             });
         });
@@ -196,8 +209,11 @@ function displayOptions(options, inputFields) {
         const submitButton = document.createElement('button');
         submitButton.innerText = "Submit";
         submitButton.classList.add('btn', 'submit-btn');
-        submitButton.addEventListener('click', () => collectInputData(inputFields));
         optionButtonsElement.appendChild(submitButton);
+        submitButton.addEventListener('click', () => collectInputData(inputFields));
+
+        // Apply GSAP stagger to the input fields and the submit button
+        gsap.from(optionButtonsElement.children, { duration: 1, y: -10, autoAlpha: 0, stagger: 0.2});
     } else {
         options.forEach(option => {
             if (showOption(option)) {
@@ -205,10 +221,13 @@ function displayOptions(options, inputFields) {
                 button.innerText = option.text;
                 button.classList.add('btn');
                 button.classList.add('option-btn');
-                button.addEventListener('click', () => selectOption(option));
                 optionButtonsElement.appendChild(button);
+                button.addEventListener('click', () => selectOption(option));
             }
         });
+
+        // Apply GSAP stagger to the option buttons
+        gsap.from(optionButtonsElement.children, { duration: 1, y: -6, autoAlpha: 0, stagger: 0.1 });
     }
 }
 
