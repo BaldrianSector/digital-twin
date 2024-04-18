@@ -204,7 +204,6 @@ function displayOptions(options, inputFields) {
             input.setAttribute('autocomplete', 'off');
 
             // Hide the cursor when the input is focused
-
             input.addEventListener("focus", function() {
                 if (cursorSpan) {
                     cursorSpan.style.visibility = 'hidden';
@@ -218,7 +217,6 @@ function displayOptions(options, inputFields) {
             });
 
             // Allow pressing Enter to submit the input
-
             input.addEventListener("keypress", function(event) {
                 if (event.key === "Enter") {
                     event.preventDefault();
@@ -237,7 +235,9 @@ function displayOptions(options, inputFields) {
         gsap.from(optionButtonsElement.children, { duration: 1, y: -10, autoAlpha: 0, stagger: 0.2});
     } else {
         options.forEach(option => {
-            if (showOption(option)) {
+
+            // Only show singleUse options once
+            if (showOption(option) && (!option.singleUse || (option.singleUse && !textNodes.find(node => node.id === option.nextNode).visited))) {
                 const button = document.createElement('button');
                 button.innerText = option.text;
                 button.classList.add('btn');
@@ -304,7 +304,8 @@ const textNodes = [
         options: [
             {
                 text: `Your Photography Journey`,
-                nextNode: 2
+                nextNode: 2,
+                singleUse: true
             },
             {
                 text: `Your Theater Experience`,
@@ -332,7 +333,8 @@ const textNodes = [
         options: [
             {
                 text: `Your Photography Journey`,
-                nextNode: 2
+                nextNode: 2,
+                singleUse: true
             },
             {
                 text: `Your Theater Experience`,
@@ -412,7 +414,8 @@ const textNodes = [
         options: [
             {
                 text: `Talk about your photography!`,
-                nextNode: 2
+                nextNode: 2,
+                singleUse: true
             },
             {
                 text: `Do you play computer games?`,
@@ -442,7 +445,8 @@ const textNodes = [
         options: [
             {
                 text: `I want to know more.`,
-                nextNode: 2
+                nextNode: 2,
+                singleUse: true
             },
             {
                 text: `Where can I see more photos like this?`,
@@ -461,7 +465,8 @@ const textNodes = [
         options: [
             {
                 text: `I want to know more.`,
-                nextNode: 2
+                nextNode: 2,
+                singleUse: true
             },
             {
                 text: `Enough about all this photography stuff...`,
@@ -513,7 +518,8 @@ const textNodes = [
         options: [
             {
                 text: `I want to know more.`,
-                nextNode: 2
+                nextNode: 2,
+                singleUse: true
             },
             {
                 text: `Take me back to the beginning.`,
