@@ -235,9 +235,10 @@ function displayOptions(options, inputFields) {
         gsap.from(optionButtonsElement.children, { duration: 1, y: -10, autoAlpha: 0, stagger: 0.2});
     } else {
         options.forEach(option => {
+            const nextTextNode = textNodes.find(node => node.id === option.nextNode);
 
-            // Only show singleUse options once
-            if (showOption(option) && (!option.singleUse || (option.singleUse && !textNodes.find(node => node.id === option.nextNode).visited))) {
+            // Check if the next text node is marked as singleUse and has already been visited
+            if (showOption(option) && !(nextTextNode.singleUse && nextTextNode.visited)) {
                 const button = document.createElement('button');
                 button.innerText = option.text;
                 button.classList.add('btn');
@@ -304,8 +305,7 @@ const textNodes = [
         options: [
             {
                 text: `Your Photography Journey`,
-                nextNode: 2,
-                singleUse: true
+                nextNode: 2
             },
             {
                 text: `Your Theater Experience`,
@@ -333,8 +333,7 @@ const textNodes = [
         options: [
             {
                 text: `Your Photography Journey`,
-                nextNode: 2,
-                singleUse: true
+                nextNode: 2
             },
             {
                 text: `Your Theater Experience`,
@@ -357,6 +356,7 @@ const textNodes = [
     },
     {
         id: 2,
+        singleUse: true,
         text: `Anything specific you would like to know?`,
         navLinks: [{text: "hobbies", link: 12}, {text: `photography`, link: 2},],
         options: [
@@ -414,8 +414,7 @@ const textNodes = [
         options: [
             {
                 text: `Talk about your photography!`,
-                nextNode: 2,
-                singleUse: true
+                nextNode: 2
             },
             {
                 text: `Do you play computer games?`,
@@ -445,8 +444,7 @@ const textNodes = [
         options: [
             {
                 text: `I want to know more.`,
-                nextNode: 2,
-                singleUse: true
+                nextNode: 2
             },
             {
                 text: `Where can I see more photos like this?`,
@@ -465,8 +463,7 @@ const textNodes = [
         options: [
             {
                 text: `I want to know more.`,
-                nextNode: 2,
-                singleUse: true
+                nextNode: 2
             },
             {
                 text: `Enough about all this photography stuff...`,
@@ -518,8 +515,7 @@ const textNodes = [
         options: [
             {
                 text: `I want to know more.`,
-                nextNode: 2,
-                singleUse: true
+                nextNode: 2
             },
             {
                 text: `Take me back to the beginning.`,
