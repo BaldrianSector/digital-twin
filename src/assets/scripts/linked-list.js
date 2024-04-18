@@ -74,7 +74,6 @@ function startGame() {
     textNodes.forEach(node => node.visited = false) // Reset visited states
     showTextNode(0)
     updateNavigationEl() // Initial update
-    clearOptions()
 }
 
 let currentTimeout = null;

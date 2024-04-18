@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-  justify-items: start;
-}
-
 .special-elite-regular {
   font-family: "Special Elite", system-ui;
   font-weight: 400;
@@ -64,6 +56,10 @@ body {
 }
 
 #app {
+  max-width: 1280px;
+  margin: 0 auto;
+  font-weight: normal;
+  justify-items: start;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
