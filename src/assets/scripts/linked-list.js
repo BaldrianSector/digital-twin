@@ -74,6 +74,10 @@ function startGame() {
     textNodes.forEach(node => node.visited = false) // Reset visited states
     showTextNode(0)
     updateNavigationEl() // Initial update
+
+    // Apply GSAP animation to the navigation element on start
+    gsap.from(navigationEl, { opacity: 0, duration: 3, ease: "power4.in"});
+
 }
 
 let currentTimeout = null;
