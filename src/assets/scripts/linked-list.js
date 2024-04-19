@@ -577,7 +577,7 @@ const textNodes = [
     {
         id: 13,
         singleUse: false,
-        text: `*${digitalTwin.name}:* Here is a of files within the /travel_photograpgy folder.`,
+        text: `*${digitalTwin.name}:* Here is all of the files within the /travel_photograpgy folder.`,
         options: [
             {
                 text: `Tokyo.jpeg`,
@@ -1522,7 +1522,7 @@ const textNodes = [
         id: 75,
         singleUse: false,
         navLinks: [{text: "home", link: 7}, {text: "archive", link: 12}, {text: "coding", link: 75}],
-        text: `*${digitalTwin.name}:* Here is a of files within the /coding_projects folder.<br/><br/>Each text file contains links to GitHub repositories with deployment of the respective coding projects.`,
+        text: `*${digitalTwin.name}:* Here is all of the files within the /coding_projects folder.<br/><br/>Each text file contains links to GitHub repositories with deployment of the respective coding projects.`,
         options: [
             {
                 text: `/se_hvad_han_kan.txt`,
