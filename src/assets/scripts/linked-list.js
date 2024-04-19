@@ -605,7 +605,7 @@ const textNodes = [
     {
         id: 14,
         singleUse: false,
-        text: `![View of Tokyo from Tokyo Skytree](assets/images/East-Asia/Tokyo.JPG) <br/>A view of Tokyo skyline shot from the Tokyo Skytree, or perhaps Gotham City, in November of 2023. The photo is unedited, straigt out of camera.`,
+        text: `![View of Tokyo from Tokyo Skytree](public/assets/images/East-Asia/Tokyo.JPG) <br/>A view of Tokyo skyline shot from the Tokyo Skytree, or perhaps Gotham City, in November of 2023. The photo is unedited, straigt out of camera.`,
         options: [
             {
                 text: `Heroshima.jpeg`,
@@ -625,7 +625,7 @@ const textNodes = [
     {
         id: 15,
         singleUse: false,
-        text: `![View of Heroshima](assets/images/East-Asia/Tokyo.JPG) <br/> A stunning sunset scene in Hiroshima, with a panoramic view of the cityscape. I this sunset made me resonate with the tragic history of Hiroshima, serving as a poignant reminder of the resilience and hope that emerged from the city's past. `,
+        text: `![View of Heroshima](public/assets/images/East-Asia/Tokyo.JPG) <br/> A stunning sunset scene in Hiroshima, with a panoramic view of the cityscape. I this sunset made me resonate with the tragic history of Hiroshima, serving as a poignant reminder of the resilience and hope that emerged from the city's past. `,
         options: [
             {
                 text: `Tokyo.jpeg`,
@@ -645,7 +645,7 @@ const textNodes = [
     {
         id: 16,
         singleUse: false,
-        text: `![View of 101 in Taipei](assets/images/East-Asia/Taipei.JPG) <br/> 101 in Taipei, Taiwan. I can't recommend this place enough.`,
+        text: `![View of 101 in Taipei](public/assets/images/East-Asia/Taipei.JPG) <br/> 101 in Taipei, Taiwan. I can't recommend this place enough.`,
         options: [
             {
                 text: `Tokyo.jpeg`,
@@ -1755,7 +1755,7 @@ const textNodes = [
     {
         id: 86,
         singleUse: false,
-        text: ` ![me1.jpeg](assets/images/me/me1.JPG)`,
+        text: ` ![me1.jpeg](public/assets/images/me/me1.JPG)`,
         options: [
             {
                 text: `me2.jpg`,
@@ -1783,7 +1783,7 @@ const textNodes = [
     {
         id: 87,
         singleUse: false,
-        text: `![me2.jpeg](assets/images/me/me2.JPG)`,
+        text: `![me2.jpeg](public/assets/images/me/me2.JPG)`,
         options: [
             {
                 text: `me1.jpg`,
@@ -1811,7 +1811,7 @@ const textNodes = [
     {
         id: 88,
         singleUse: false,
-        text: `![me3.jpeg](assets/images/me/me3.JPG)`,
+        text: `![me3.jpeg](public/assets/images/me/me3.JPG)`,
         options: [
             {
                 text: `me1.jpg`,

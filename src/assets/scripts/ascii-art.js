@@ -12,7 +12,7 @@ new p5(function (p) {
         asciiDiv = p.createDiv();
         asciiDiv.parent('ascii-container');  // Make sure this div appends within a specific container
         p.noCanvas();
-        video = p.createVideo(['assets/videos/animation2-cropped.mp4']);
+        video = p.createVideo(['public/assets/videos/animation2-cropped.mp4']);
         video.size(video.width / 5, video.height / 5);  // Adjust video resolution
         video.volume(0)
         video.speed(1);
