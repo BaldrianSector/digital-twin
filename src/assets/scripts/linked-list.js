@@ -401,7 +401,7 @@ const textNodes = [
             },
             {
                 text: `Are these answers predetermined?`,
-                nextNode: 9
+                nextNode: 10
             },
             {
                 text: `Who made you?`,
