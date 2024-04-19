@@ -459,6 +459,10 @@ const textNodes = [
             {
                 text: `Explain this system.`,
                 nextNode: 5
+            },
+            {
+                text: `Switch user accounts.`,
+                nextNode: 34
             }
         ],
         visited: false
@@ -1037,7 +1041,7 @@ const textNodes = [
     },
     {
         id: 34,
-        singleUse: true,
+        singleUse: false,
         text: `*${digitalTwin.name}:* Initiating login process for Admin account. Please wait...<br/><br/>Loading account information... [OK]
         Checking security protocols... [OK]
         Prompting for Admin Password...<br/><br/>Please enter Admin Password:`,
