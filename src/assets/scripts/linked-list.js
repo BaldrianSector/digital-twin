@@ -601,7 +601,7 @@ const textNodes = [
     {
         id: 14,
         singleUse: false,
-        text: `*${digitalTwin.name}:* ![View of Tokyo from Tokyo Skytree](src/assets/images/East-Asia/Tokyo.JPG) <br/> This is one of my favorite photos from my trip to Japan. I took this shot from the Tokyo Skytree in November of 2023. The photo is unedited, straigt out of camera.`,
+        text: `![View of Tokyo from Tokyo Skytree](src/assets/images/East-Asia/Tokyo.JPG) <br/>A view of Tokyo skyline shot from the Tokyo Skytree, or perhaps Gotham City, in November of 2023. The photo is unedited, straigt out of camera.`,
         options: [
             {
                 text: `Heroshima.jpeg`,
@@ -621,7 +621,7 @@ const textNodes = [
     {
         id: 15,
         singleUse: false,
-        text: `*${digitalTwin.name}:* ![View of Heroshima](src/assets/images/East-Asia/Tokyo.JPG) <br/> A stunning sunset scene in Hiroshima, with a panoramic view of the cityscape. I this sunset made me resonate with the tragic history of Hiroshima, serving as a poignant reminder of the resilience and hope that emerged from the city's past. `,
+        text: `![View of Heroshima](src/assets/images/East-Asia/Tokyo.JPG) <br/> A stunning sunset scene in Hiroshima, with a panoramic view of the cityscape. I this sunset made me resonate with the tragic history of Hiroshima, serving as a poignant reminder of the resilience and hope that emerged from the city's past. `,
         options: [
             {
                 text: `Tokyo.jpeg`,
@@ -641,7 +641,7 @@ const textNodes = [
     {
         id: 16,
         singleUse: false,
-        text: `*${digitalTwin.name}:* ![View of 101 in Taipei](src/assets/images/East-Asia/Taipei.JPG) <br/> 101 in Taipei, Taiwan. I can't recommend this place enough.`,
+        text: `![View of 101 in Taipei](src/assets/images/East-Asia/Taipei.JPG) <br/> 101 in Taipei, Taiwan. I can't recommend this place enough.`,
         options: [
             {
                 text: `Tokyo.jpeg`,
@@ -1073,10 +1073,6 @@ const textNodes = [
             {
                 text: `/travel_photography`,
                 nextNode: 13
-            },
-            {
-                text: `/light_design`,
-                nextNode: 54
             },
             {
                 text: `/me`,
