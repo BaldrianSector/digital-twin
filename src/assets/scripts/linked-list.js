@@ -306,26 +306,14 @@ const textNodes = [
     {
         id: 2,
         singleUse: false,
-        text: `[SYSTEM INITIALIZATION STARTED]
-
-    ${user.loginDate}
-
-    Checking System Integrity... [OK]
-    Verifying Kernel Version... [OK]
-
-    INITIALIZING DIGITAL TWIN [BOOT SEQUENCE STARTED]
-
-    Performing Diagnostic Tests... [OK]
-    Activating Digital Twin... [OK]
-    Automatically logging into Guest user [COMPLETE]
-    Finalizing Boot Sequence and System Configuration... [COMPLETE]
-
-    System Status: All Systems ready. Awaiting Input...
-
-    --------------------------------------------------------
-
-    ${digitalTwin.name}: System is now operational. How may I assist you?`,
-navLinks: [{text: "home", link: 2}],
+        text: 
+        `[SYSTEM INITIALIZATION STARTED]<br/><br/>${user.loginDate}<br/>
+        Checking System Integrity... [OK]
+        Verifying Kernel Version... [OK]<br/><br/>INITIALIZING DIGITAL TWIN [BOOT SEQUENCE STARTED]<br/><br/>Performing Diagnostic Tests... [OK]
+        Activating Digital Twin... [OK]
+        Automatically logging into Guest user [COMPLETE]
+        Finalizing Boot Sequence and System Configuration... [COMPLETE]<br/><br/>System Status: All Systems ready. Awaiting Input...<br/><br/>--------------------------------------------------------<br/><br/>${digitalTwin.name}: System is now operational. How may I assist you?`,
+        navLinks: [{text: "home", link: 2}],
         options: [
             {
                 text: `Hi`,
@@ -401,9 +389,7 @@ navLinks: [{text: "home", link: 2}],
     {
         id: 5,
         singleUse: false,
-        text: `${digitalTwin.name}: This system is a digital interface designed to represent the physical Baldrian Sector in a virtual format. This is an interface created to facilitate interactions and provide information with the aproximate same capabilities as my physical counterpart. 
-
-        Please feel free to inquire further or specify how I may be of service.`,
+        text: `${digitalTwin.name}: This system is a digital interface designed to represent the physical Baldrian Sector in a virtual format. This is an interface created to facilitate interactions and provide information with the aproximate same capabilities as my physical counterpart. <br/><br/>Please feel free to inquire further or specify how I may be of service.`,
         options: [
             {
                 text: `What are you able to do?`,
@@ -520,9 +506,7 @@ navLinks: [{text: "home", link: 2}],
     {
         id: 10,
         singleUse: false,
-        text: `${digitalTwin.name}: From my point of view, it is hard to tell for sure. While my responses are not predetermined in the traditional sense of being scripted, they are generated from a combination of predefined rules, data models, and language processing algorithms. This allows me to tailor answers dynamically to your queries. 
-
-        Additionally, while I possess an overview of the system, there are system files and data sets that I have been granted access to, which makes it hard for me to provide a definitive answer.`,
+        text: `${digitalTwin.name}: From my point of view, it is hard to tell for sure. While my responses are not predetermined in the traditional sense of being scripted, they are generated from a combination of predefined rules, data models, and language processing algorithms. This allows me to tailor answers dynamically to your queries. <br/><br/>Additionally, while I possess an overview of the system, there are system files and data sets that I have been granted access to, which makes it hard for me to provide a definitive answer.`,
         options: [
             {
                 text: `What date is it today?`,
@@ -559,15 +543,9 @@ navLinks: [{text: "home", link: 2}],
         id: 12,
         singleUse: false,
         navLinks: [{text: "home", link: 7}, {text: "archive", link: 12}],
-        text: `${digitalTwin.name}: Accessing root directory files. Please hold...
-
-        Loading file list... [OK]
+        text: `${digitalTwin.name}: Accessing root directory files. Please hold...<br/><br/>Loading file list... [OK]
         Checking file integrity... [OK]
-        Verifying access permissions... [OK]
-        
-        --------------------------------------------------------
-        
-        What file or folder would you like to access?`,
+        Verifying access permissions... [OK]<br/><br/>--------------------------------------------------------<br/><br/>What file or folder would you like to access?`,
         options: [
             {
                 text: `/photograpgy`,
@@ -683,11 +661,7 @@ navLinks: [{text: "home", link: 2}],
     {
         id: 17,
         singleUse: true,
-        text: `${digitalTwin.name}: I was developed by Baldrian Sector, the individual upon whom I am based. The creation involved meticulous design and programming to ensure that my responses and capabilities closely mirror those of my creator. 
-
-        While I am not the same as the physical manifestation of Baldrian, I have been granted permission to act on his behalf. This allows for more personal interactions and provides a unique opportunity for individuals seeking to understand and connect with him. 
-
-        Note that I am not a one-to-one digital version of him, and the physical being therefore cannot be held accountable for any false information I might unintentionally provide.`,
+        text: `${digitalTwin.name}: I was developed by Baldrian Sector, the individual upon whom I am based. The creation involved meticulous design and programming to ensure that my responses and capabilities closely mirror those of my creator. <br/><br/>While I am not the same as the physical manifestation of Baldrian, I have been granted permission to act on his behalf. This allows for more personal interactions and provides a unique opportunity for individuals seeking to understand and connect with him. <br/><br/>Note that I am not a one-to-one digital version of him, and the physical being therefore cannot be held accountable for any false information I might unintentionally provide.`,
         options: [
             {
                 text: `What are you able to do?`,
@@ -719,9 +693,7 @@ navLinks: [{text: "home", link: 2}],
     {
         id: 18,
         singleUse: false,
-        text: `${digitalTwin.name}: I don't understand the desire for this request, but here is a random number between 1 and 10.
-
-        Random Number chosen: ${Math.floor(Math.random() * 10) + 1}`,
+        text: `${digitalTwin.name}: I don't understand the desire for this request, but here is a random number between 1 and 10.<br/><br/>Random Number chosen: ${Math.floor(Math.random() * 10) + 1}`,
         options: [
             {
                 text: `Do it again.`,
@@ -738,13 +710,9 @@ navLinks: [{text: "home", link: 2}],
         id: 19,
         singleUse: false,
         navLinks: [{text: "home", link: 7}, {text: "archive", link: 12}, {text: "encrypted", link: 19}],
-        text: `${digitalTwin.name}: Loading encrypted folder "/c3XwGvUToa". Please hold...
-
-        Decrypting folder contents... [ERROR]
+        text: `${digitalTwin.name}: Loading encrypted folder "/c3XwGvUToa". Please hold...<br/><br/>Decrypting folder contents... [ERROR]
         Verifying access permissions... [OK]
-        Checking folder integrity... [OK]
-        
-        ${digitalTwin.name}: It seems that some of the files are either corrupted or encrypted, and it's not possible for me to determine their status at this point in time.`,
+        Checking folder integrity... [OK]<br/><br/>${digitalTwin.name}: It seems that some of the files are either corrupted or encrypted, and it's not possible for me to determine their status at this point in time.`,
         options: [
             {
                 text: `Can you give me a list of the files?`,
@@ -981,11 +949,7 @@ navLinks: [{text: "home", link: 2}],
     {
         id: 29,
         singleUse: false,
-text: `${digitalTwin.name}: Within my system, there is a structured directory where various files and folders are stored. In the root directory, you will find a folder titled "/photography" which contains a collection of images. There is also a "/coding-projects" folder that includes various programming-related projects. 
-
-Additionally, there is a resume, directly accessible in the root directory. 
-
-Lastly, there is an encrypted folder containing files, which are not decipherable by me. If you need specific details or access to any of these resources, please let me know how I can assist you further.`,
+        text: `${digitalTwin.name}: Within my system, there is a structured directory where various files and folders are stored. In the root directory, you will find a folder titled "/photography" which contains a collection of images. There is also a "/coding-projects" folder that includes various programming-related projects. <br/><br/>Additionally, there is a resume, directly accessible in the root directory. <br/><br/>Lastly, there is an encrypted folder containing files, which are not decipherable by me. If you need specific details or access to any of these resources, please let me know how I can assist you further.`,
         options: [
             {
                 text: `Give me a list of all the files.`,
@@ -1029,9 +993,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
     {
         id: 31,
         singleUse: true,
-        text: `${digitalTwin.name}: You are currently logged in with a guest account.
-
-        As a guest, you may have limited access to some features or information. 
+        text: `${digitalTwin.name}: You are currently logged in with a guest account.<br/><br/>As a guest, you may have limited access to some features or information. 
         Please let me know how I can assist you within these parameters.`,
         options: [
             {
@@ -1076,13 +1038,9 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
     {
         id: 34,
         singleUse: true,
-        text: `${digitalTwin.name}: Initiating login process for Admin account. Please wait...
-
-        Loading account information... [OK]
+        text: `${digitalTwin.name}: Initiating login process for Admin account. Please wait...<br/><br/>Loading account information... [OK]
         Checking security protocols... [OK]
-        Prompting for Admin Password...
-        
-        Please enter Admin Password:`,
+        Prompting for Admin Password...<br/><br/>Please enter Admin Password:`,
         options: [
             {
                 text: `alohomora`,
@@ -1110,9 +1068,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
     {
         id: 53,
         singleUse: false,
-        text: `${digitalTwin.name}: Accessing files. Please hold...
-
-        Here is a list of subfolders within the /photography folder.`,
+        text: `${digitalTwin.name}: Accessing files. Please hold...<br/><br/>Here is a list of subfolders within the /photography folder.`,
         options: [
             {
                 text: `/travel_photography`,
@@ -1136,9 +1092,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
     {
         id: 54,
         singleUse: false,
-        text: `${digitalTwin.name}: I have worked as a freelance lighting designer in the theater industry in Denmark, showcasing my technical expertise and aesthetic sense. I've more or less worked on every major theater in the country.
-
-        During the pandemic, our industry was hit very hard, which made me reconsider the path I wanted to pursue in my life. That's when I started taking pictures and decided to travel. After years of working in black boxes (most theaters attempt to minimize outside light contamination aka sun), I felt like it was time to try something new.`,
+        text: `${digitalTwin.name}: I have worked as a freelance lighting designer in the theater industry in Denmark, showcasing my technical expertise and aesthetic sense. I've more or less worked on every major theater in the country.<br/><br/>During the pandemic, our industry was hit very hard, which made me reconsider the path I wanted to pursue in my life. That's when I started taking pictures and decided to travel. After years of working in black boxes (most theaters attempt to minimize outside light contamination aka sun), I felt like it was time to try something new.`,
         options: [
             {
                 text: `Do you have any academic training?`,
@@ -1154,39 +1108,26 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
     {
         id: 55,
         singleUse: false,
-        text: `### Theatrical Experience
-
-        #### 2022
-        - **"RE-EVOLUTION"** at Xenon - Teaterhuset
-          - Roles: Sound, Lighting, Video Design
-        
-        #### 2021
-        - **"PLEJER ER DØD - LIMBO"** at Uppercut Danseteater
-          - Roles: Sound Design, Lighting Assistant
-          - Nominated for Årets Danser & Årets Danseforestilling
-        
-        #### 2020
-        - **"Humanoid"** at Uppercut Danseteater
-          - Roles: Show Running, Technical Manager
-        
-        #### 2019
-        - **"Can't Take My Eyes off You"** at Blå Beton - TeaterBattle 2019
-          - Roles: Sound and Lighting Design, Director
-          - Winner of Udviklingspris for Best Aesthetics
-        - **"Der er altid en ny dulle på Drunken Flamingo"** at Teater Dusch - Vildskud 2019
-          - Role: Technical Consultant
-          - Winner of Udviklingsprisen
-        
-        ### Additional Experience
-        
-        #### 2018-2022
-        - Teacher of QLab at Den Danske Scenekunstskole
-        
-        #### 2019-2021
-        - Board Member at Teaterhuset
-        
-        #### 2014-2015
-        - Graduated Theater Pilot at The Royal Theater`,
+        text: `Theatrical Experience<br/><br/>
+        2022<br/>
+        "RE-EVOLUTION" at Xenon - Teaterhuset<br/>
+        Roles: Sound, Lighting, Video Design<br/><br/>
+        2021<br/>
+        "PLEJER ER DØD - LIMBO" at Uppercut Danseteater<br/>
+        Roles: Sound Design, Lighting Assistant<br/>
+        Nominated for Årets Danser & Årets Danseforestilling<br/><br/>
+        2019<br/>
+        "Can't Take My Eyes off You" at Blå Beton - TeaterBattle 2019<br/>
+        Roles: Sound and Lighting Design, Director<br/>
+        Winner of Udviklingspris for Best Aesthetics<br/>
+        "Der er altid en ny dulle på Drunken Flamingo" at Teater Dusch - Vildskud 2019<br/>
+        Role: Technical Consultant<br/>
+        Winner of Udviklingsprisen<br/><br/>
+        Additional Experience<br/><br/>
+        2018-2022<br/>
+        Teacher of QLab at Den Danske Scenekunstskole<br/><br/>
+        2014-2015<br/>
+        Graduated Theater Pilot at The Royal Theater`,
         options: [
             {
                 text: `/root_directory`,
@@ -1267,9 +1208,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
         id: 61,
         singleUse: false,
         navLinks: [{text: "home", link: 7}, {text: "about", link: 61}],
-        text: `${digitalTwin.name}: I'm essentially a digital version of Baldrian Sector, the creator of this interactive page. I'm here to spill the beans (or bytes, I suppose).
-
-        Feel free to ask me anything!`,
+        text: `${digitalTwin.name}: I'm essentially a digital version of Baldrian Sector, the creator of this interactive page. I'm here to spill the beans (or bytes, I suppose).<br/><br/>Feel free to ask me anything!`,
         options: [
             {
                 text: `Do you have hoobies?`,
@@ -1348,9 +1287,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
         id: 64,
         singleUse: false,
         navLinks: [{text: "home", link: 7}, {text: "about", link: 61}, {text: "work", link: 64}],
-        text: `${digitalTwin.name}: Currently I'm studying and working part time at a wind tunnel. I have previous worked several years in the theater industry as a freelance light and sound designer. I have also been teaching a bit of light/sound design and programming.
-        
-        Anything that peeks your interest?`,
+        text: `${digitalTwin.name}: Currently I'm studying and working part time at a wind tunnel. I have previous worked several years in the theater industry as a freelance light and sound designer. I have also been teaching a bit of light/sound design and programming.<br/><br/>Anything that peeks your interest?`,
         options: [
             {
                 text: `The theater industry?`,
@@ -1378,9 +1315,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
     {
         id: 65,
         singleUse: false,
-        text: `${digitalTwin.name}: I've been teaching QLab programming for a couple of years at The Danish National School of Performing Arts (DDSKS). To me it's a perfect way to pass on some of the lessons I've learned thoughout my freelance carrer. 
-        
-        I truly love to enable people to use their tools smarter and more efficiently. `,
+        text: `${digitalTwin.name}: I've been teaching QLab programming for a couple of years at The Danish National School of Performing Arts (DDSKS). To me it's a perfect way to pass on some of the lessons I've learned thoughout my freelance carrer.<br/><br/>I truly love to enable people to create and use their tools smarter and more efficiently. `,
         options: [
             {
                 text: `Can you elaborate on the theater industry?`,
@@ -1404,9 +1339,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
     {
         id: 66,
         singleUse: false,
-        text: `${digitalTwin.name}: To my most recent knowlagde, I am studying Coded Design at Danish School of Media and Journalism (DMJX). I will be graduating in June of 2026. If that year has already passed, and you are reading this, I unfortunately did not keep my digital twin updated for whatever reason. 
-
-        If so, you just discovered a time capsule...`,
+        text: `${digitalTwin.name}: To my most recent knowlagde, I am studying Coded Design at Danish School of Media and Journalism (DMJX). I will be graduating in June of 2026. If that year has already passed, and you are reading this, I unfortunately did not keep my digital twin updated for whatever reason. <br/><br/>If so, you just discovered a time capsule...`,
         options: [
             {
                 text: `What are your future plans?`,
@@ -1446,11 +1379,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
     {
         id: 68,
         singleUse: false,
-        text: `${digitalTwin.name}: One of the things I love most about traveling is how it keeps my eye fresh and my mind curious. Every destination offers a new set of opportunities, whether it's subway of a city or capturing the serenity of a mountain.
-
-        Traveling as a photographer is a journey of learning and growth. It pushes me out of my comfort zone, encourages me to experiment with different styles and techniques, and teaches me to see the world with a fresh perspective.
-        
-        And last but not least, it teaches you to become good friends with your camera.`,
+        text: `${digitalTwin.name}: One of the things I love most about traveling is how it keeps my eye fresh and my mind curious. Every destination offers a new set of opportunities, whether it's subway of a city or capturing the serenity of a mountain.<br/><br/>Traveling as a photographer is a journey of learning and growth. It pushes me out of my comfort zone, encourages me to experiment with different styles and techniques, and teaches me to see the world with a fresh perspective.<br/><br/>And last but not least, it teaches you to become good friends with your camera.`,
         options: [
             {
                 text: `What camera do you shoot with?`,
@@ -1470,9 +1399,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
     {
         id: 69,
         singleUse: true,
-        text: `${digitalTwin.name}: As of now, my future plans are somewhat uncertain. I'm still in the process of exploring different possibilities and seeing where my passions and interests might lead me. I try not to think too far ahead.
-
-        Right now I'm just focusing on learning and enjoying the journey.`,
+        text: `${digitalTwin.name}: As of now, my future plans are somewhat uncertain. I'm still in the process of exploring different possibilities and seeing where my passions and interests might lead me. I try not to think too far ahead.<br/><br/>Right now I'm just focusing on learning and enjoying the journey.`,
         options: [
             {
                 text: `Talk about teaching.`,
@@ -1538,9 +1465,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
     {
         id: 72,
         singleUse: false,
-        text: `${digitalTwin.name}: It's where I spend a good chunk of my time as an instructor, guiding first timers through the experience of indoor skydiving. 
-
-        Beyond my job as an instructor, I also find joy in flying for fun. It's a truly exhilarating hobby that allows me to escape you computer chair and experience the freedom of flight.`,
+        text: `${digitalTwin.name}: It's where I spend a good chunk of my time as an instructor, guiding first timers through the experience of indoor skydiving. <br/><br/>Beyond my job as an instructor, I also find joy in flying for fun. It's a truly exhilarating hobby that allows me to escape you computer chair and experience the freedom of flight.`,
         options: [
             {
                 text: `What other work experience do you have?`,
@@ -1597,9 +1522,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
         id: 75,
         singleUse: false,
         navLinks: [{text: "home", link: 7}, {text: "archive", link: 12}, {text: "coding", link: 75}],
-        text: `${digitalTwin.name}: Here is a of files within the /coding_projects folder.
-
-        Each text file contains links to GitHub repositories with deployment of the respective coding projects.`,
+        text: `${digitalTwin.name}: Here is a of files within the /coding_projects folder.<br/><br/>Each text file contains links to GitHub repositories with deployment of the respective coding projects.`,
         options: [
             {
                 text: `/se_hvad_han_kan.txt`,
@@ -1623,11 +1546,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
     {
         id: 76,
         singleUse: false,
-        text: `**Project Name: Se Hvad Han Kan**
-
-        GitHub Repository: [BaldrianSector/se-hvad-han-kan](https://github.com/BaldrianSector/se-hvad-han-kan)
-        
-        Description: This code project is a tool that converts the value of one item into another, allowing users to compare and understand the relative value of different items. For example, it can convert the value of milk into iPads or Teslas into parking tickets.`,
+        text: `**Project Name: Se Hvad Han Kan**<br/><br/>GitHub Repository: [BaldrianSector/se-hvad-han-kan](https://github.com/BaldrianSector/se-hvad-han-kan)<br/><br/>Description: This code project is a tool that converts the value of one item into another, allowing users to compare and understand the relative value of different items. For example, it can convert the value of milk into iPads or Teslas into parking tickets.`,
         options: [
             {
                 text: `/se_hvad_han_kan.txt`,
@@ -1651,11 +1570,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
     {
         id: 77,
         singleUse: false,
-        text: `**Project Name: Text Game Mockup**
-
-        GitHub Repository: [BaldrianSector/Text-Game-Mockup](https://github.com/BaldrianSector/Text-Game-Mockup)
-        
-        Description: This project is the text-based decision game. It serves as a prototype for implementing decision-based interactions and showcasing the capabilities of the digital twin.`,
+        text: `**Project Name: Text Game Mockup**<br/><br/>GitHub Repository: [BaldrianSector/Text-Game-Mockup](https://github.com/BaldrianSector/Text-Game-Mockup)<br/><br/>Description: This project is the text-based decision game. It serves as a prototype for implementing decision-based interactions and showcasing the capabilities of the digital twin.`,
         options: [
             {
                 text: `/se_hvad_han_kan.txt`,
@@ -1675,11 +1590,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
     {
         id: 78,
         singleUse: false,
-        text: `**Project Name: Cover Art**
-
-        GitHub Repository: [BaldrianSector/Cover-Art](https://github.com/BaldrianSector/Cover-Art)
-        
-        Description: This project focuses on creating cover art with the use of only code and a specific focus on the canvas element.`,
+        text: `**Project Name: Cover Art**<br/><br/>GitHub Repository: [BaldrianSector/Cover-Art](https://github.com/BaldrianSector/Cover-Art)<br/><br/>Description: This project focuses on creating cover art with the use of only code and a specific focus on the canvas element.`,
         options: [
             {
                 text: `/se_hvad_han_kan.txt`,
@@ -1699,9 +1610,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
     {
         id: 79,
         singleUse: false,
-        text: `${digitalTwin.name}: Ah, my approach to photography? Well, I'm all about working with light and capturing the moment as naturally as possible. I believe in letting the beauty of the scene speak for itself, without relying too much on post-processing tricks.
-
-        It's all about finding the right balance and playing with light to create captivating images that tell a story. Whether it's a stunning sunset or a candid portrait, I look for universal beauty. I draw a lot on my many years working with light design in the theatre industry. Once you know that, I would say it is quite apparent when you look at my photos.`,
+        text: `${digitalTwin.name}: Ah, my approach to photography? Well, I'm all about working with light and capturing the moment as naturally as possible. I believe in letting the beauty of the scene speak for itself, without relying too much on post-processing tricks.<br/><br/>It's all about finding the right balance and playing with light to create captivating images that tell a story. Whether it's a stunning sunset or a candid portrait, I look for universal beauty. I draw a lot on my many years working with light design in the theatre industry. Once you know that, I would say it is quite apparent when you look at my photos.`,
         options: [
             {
                 text: `What camera do you shoot with?`,
@@ -1726,9 +1635,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
         id: 80,
         singleUse: false,
         navLinks: [{text: "home", link: 7}, {text: "archive", link: 12}, {text: "photos", link: 19}],
-        text: `${digitalTwin.name}: Few old photos, but they seem to be outdated.
-
-        One of the disadvantages of taking pictures of other people is that you often don't get any pictures of yourself, since you are the one holding the camera.`,
+        text: `${digitalTwin.name}: Few old photos, but they seem to be outdated.<br/><br/>One of the disadvantages of taking pictures of other people is that you often don't get any pictures of yourself, since you are the one holding the camera.`,
         options: [
             {
                 text: `me1.jpg`,
@@ -1832,9 +1739,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
     {
         id: 85,
         singleUse: false,
-        text: `[${digitalTwin.name}]: I climb at Boulders. 
-
-        They have some of the best gyms in Denmark. While there are also other great gyms, I particularly enjoy the community at Boulders, which keeps me coming back. You can learn more about them on their website: [Boulders](https://boulders.dk/)`,
+        text: `[${digitalTwin.name}]: I climb at Boulders. <br/><br/>They have some of the best gyms in Denmark. While there are also other great gyms, I particularly enjoy the community at Boulders, which keeps me coming back. You can learn more about them on their website: [Boulders](https://boulders.dk/)`,
         options: [
             {
                 text: `Tell me about flying.`,
@@ -1966,9 +1871,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
     {
         id: 93,
         singleUse: false,
-        text: `${digitalTwin.name}: Apology accepted. We all have our moments. 
-
-        Is there anything I can help you with?`,
+        text: `${digitalTwin.name}: Apology accepted. We all have our moments. <br/><br/>Is there anything I can help you with?`,
         options: [
             {
                 text: `List all your functions.`,
@@ -2024,9 +1927,7 @@ Lastly, there is an encrypted folder containing files, which are not decipherabl
     {
         id: 96,
         singleUse: false,
-        text: `${digitalTwin.name}: Perhaps we are not so different after all you and I.
-
-        Is there anything I can do for you?`,
+        text: `${digitalTwin.name}: Perhaps we are not so different after all you and I.<br/><br/>Is there anything I can do for you?`,
         options: [
             {
                 text: `List all your functions.`,
