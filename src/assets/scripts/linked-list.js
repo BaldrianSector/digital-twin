@@ -1002,7 +1002,7 @@ const textNodes = [
             },
             {
                 text: `Can you log into an other account in the system?`,
-                nextNode: 24
+                nextNode: 34
             }
         ],
         visited: false
