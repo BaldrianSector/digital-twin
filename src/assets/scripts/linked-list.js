@@ -625,7 +625,7 @@ const textNodes = [
     {
         id: 15,
         singleUse: false,
-        text: `![View of Heroshima](assets/images/East-Asia/Tokyo.JPG) <br/> A stunning sunset scene in Hiroshima, with a panoramic view of the cityscape. I this sunset made me resonate with the tragic history of Hiroshima, serving as a poignant reminder of the resilience and hope that emerged from the city's past. `,
+        text: `![View of Heroshima](assets/images/East-Asia/Heroshima.JPG) <br/> A stunning sunset scene in Hiroshima, with a panoramic view of the cityscape. I this sunset made me resonate with the tragic history of Hiroshima, serving as a poignant reminder of the resilience and hope that emerged from the city's past. `,
         options: [
             {
                 text: `Tokyo.jpeg`,
