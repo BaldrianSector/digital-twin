@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 
-let instant = true; // Set to true to display all text instantly
+let instant = false; // Set to true to display all text instantly
 
 const textElement = document.getElementById('text')
 const optionButtonsElement = document.getElementById('option-buttons')
@@ -144,7 +144,7 @@ function showTextNode(textNodeIndex) {
             }
     
             index++;
-            currentTimeout = setTimeout(displayNextCharacter, instant ? 0 : 21);
+            currentTimeout = setTimeout(displayNextCharacter, instant ? 0 : 15);
         } else {
             textNode.visited = true;
             displayOptions(textNode.options, textNode.inputFields);
@@ -1208,7 +1208,7 @@ const textNodes = [
         id: 61,
         singleUse: false,
         navLinks: [{text: "home", link: 7}, {text: "about", link: 61}],
-        text: `*${digitalTwin.name}:* I'm essentially a digital version of Baldrian Sector, the creator of this interactive page. I'm here to spill the beans (or bytes, I suppose).<br/><br/>Feel free to ask me anything!`,
+        text: `*${digitalTwin.name}:* I'm a digital version of Baldrian Sector, the creator of this interactive page. I'm here to spill the beans (or bytes, I suppose).<br/><br/>Feel free to ask ahead!`,
         options: [
             {
                 text: `Do you have hoobies?`,
