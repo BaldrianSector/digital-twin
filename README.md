@@ -1,29 +1,10 @@
-# Text-Game-Mockup
+# Digital Twin - Baldrian Sector
 
-This template should help get you started developing with Vue 3 in Vite.
+An interactive, text-based representation of me, designed to let visitors explore my work, skills, and background through playfull conversation. It blends portfolio, CV, and narrative design into a single experience.
 
-## Recommended IDE Setup
+## Overview
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Instead of scrolling through a static site, users can talk to my digital counterpart and uncover:
+- Projects I’ve worked on
+- My experience in the theatre industry, creative coding, and immersive installations
+- Insights into my process and ideas
