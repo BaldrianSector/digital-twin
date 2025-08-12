@@ -8,3 +8,5 @@ Instead of scrolling through a static site, users can talk to my digital counter
 - Projects I’ve worked on
 - My experience in the theatre industry, creative coding, and immersive installations
 - Insights into my process and ideas
+
+This project was developed durring my time studying Coded Design at The Danish School of Media and Journalism (DMJX)
