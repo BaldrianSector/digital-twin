@@ -312,7 +312,7 @@ const textNodes = [
         Verifying Kernel Version... [OK]<br/><br/>INITIALIZING DIGITAL TWIN [BOOT SEQUENCE STARTED]<br/><br/>Performing Diagnostic Tests... [OK]
         Activating Digital Twin... [OK]
         Automatically logging into Guest user [COMPLETE]
-        Finalizing Boot Sequence and System Configuration... [COMPLETE]<br/><br/>System Status: All Systems ready. Awaiting Input...<br/><br/>--------------------------------------------------------<br/><br/>*${digitalTwin.name}:* System is now operational. How may I assist you?`,
+        Finalizing Boot Sequence and System Configuration... [COMPLETE]<br/><br/>System Status: All Systems ready. Awaiting Input...<br/><br/>----------------------------------------------------<br/><br/>*${digitalTwin.name}:* System is now operational. How may I assist you?`,
         navLinks: [{ text: "home", link: 2 }],
         options: [
             {
@@ -549,7 +549,7 @@ const textNodes = [
         navLinks: [{ text: "home", link: 7 }, { text: "archive", link: 12 }],
         text: `*${digitalTwin.name}:* Accessing root directory files. Please hold...<br/><br/>Loading file list... [OK]
         Checking file integrity... [OK]
-        Verifying access permissions... [OK]<br/><br/>--------------------------------------------------------<br/><br/>What file or folder would you like to access?`,
+        Verifying access permissions... [OK]<br/><br/>----------------------------------------------------<br/><br/>What file or folder would you like to access?`,
         options: [
             {
                 text: `/photograpgy`,
@@ -1108,7 +1108,7 @@ const textNodes = [
     {
         id: 55,
         singleUse: false,
-        text: `Theatrical Experience<br/><br/>
+        text: `Selected Theatrical Experience<br/><br/>
         2022<br/>
         "RE-EVOLUTION" at Xenon - Teaterhuset<br/>
         Roles: Sound, Lighting, Video Design<br/><br/>
@@ -1119,12 +1119,13 @@ const textNodes = [
         2019<br/>
         "Can't Take My Eyes off You" at Blå Beton - TeaterBattle 2019<br/>
         Roles: Sound and Lighting Design, Director<br/>
-        Winner of Udviklingspris for Best Aesthetics<br/>
+        Winner of Udviklingspris for Best Aesthetics<br/><br/>
+        2018<br/>
         "Der er altid en ny dulle på Drunken Flamingo" at Teater Dusch - Vildskud 2019<br/>
         Role: Technical Consultant<br/>
         Winner of Udviklingsprisen<br/><br/>
         Additional Experience<br/><br/>
-        2018-2022<br/>
+        2018-PRESENT<br/>
         Teacher of QLab at Den Danske Scenekunstskole<br/><br/>
         2014-2015<br/>
         Graduated Theater Pilot at The Royal Theater`,
@@ -1465,7 +1466,7 @@ const textNodes = [
     {
         id: 72,
         singleUse: false,
-        text: `*${digitalTwin.name}:* It's where I spend a good chunk of my time as an instructor, guiding first timers through the experience of indoor skydiving. <br/><br/>Beyond my job as an instructor, I also find joy in flying for fun. It's a truly exhilarating hobby that allows me to escape you computer chair and experience the freedom of flight.`,
+        text: `*${digitalTwin.name}:* It's where I spend a good chunk of my time as an instructor, guiding first timers through the experience of indoor skydiving. <br/><br/>Beyond my job as an instructor, I also find joy in flying for fun, I'm also a certified skydiver with more than 100 jumps. It's a truly exhilarating hobby that allows me to escape my computer chair and experience the freedom of flight.`,
         options: [
             {
                 text: `What other work experience do you have?`,
