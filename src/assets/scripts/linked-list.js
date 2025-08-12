@@ -27,8 +27,8 @@ bootBtn.addEventListener('click', () => {
 // Navigation links
 
 let navigationLinks = [
-    {text: "home", link: 7},
-    {text: "introduction", link: 0},
+    { text: "home", link: 7 },
+    { text: "introduction", link: 0 },
 ]
 
 function updateNavigationLinks(node) {
@@ -59,7 +59,7 @@ function updateNavigationEl() {
 
 // User object
 
-let user = { 
+let user = {
     name: "",
     email: undefined,
     age: undefined,
@@ -81,7 +81,7 @@ function startGame() {
     updateNavigationEl() // Initial update
 
     // Apply GSAP animation to the navigation element on start
-    gsap.from(navigationEl, { opacity: 0, duration: 3, ease: "power4.in"});
+    gsap.from(navigationEl, { opacity: 0, duration: 3, ease: "power4.in" });
 
 }
 
@@ -102,7 +102,7 @@ function showTextNode(textNodeIndex) {
     }
 
     const markdownText = (typeof textNode.text === "function") ? textNode.text() : textNode.text; // Check if the text is a function and call it if it is, to allow for dynamic text
-    
+
     const parsedHTML = marked.parse(markdownText); // Parse the markdown to HTML
 
     textElement.innerHTML = parsedHTML; // Temporarily set the parsed HTML to measure it
@@ -131,10 +131,10 @@ function showTextNode(textNodeIndex) {
 
     function displayNextCharacter() {
         cursorSpan.classList.remove('blink'); // Stop blinking when typing starts
-    
+
         if (index < hiddenSpans.length) {
             hiddenSpans[index].classList.remove('hidden');
-    
+
             // Move the cursorSpan to follow the last revealed character
             if (index < hiddenSpans.length - 1) {
                 hiddenSpans[index + 1].parentNode.insertBefore(cursorSpan, hiddenSpans[index + 1]);
@@ -142,7 +142,7 @@ function showTextNode(textNodeIndex) {
                 // When all characters are revealed, append the cursor at the end
                 textElement.appendChild(cursorSpan);
             }
-    
+
             index++;
             currentTimeout = setTimeout(displayNextCharacter, instant ? 0 : 15);
         } else {
@@ -209,20 +209,20 @@ function displayOptions(options, inputFields) {
             input.setAttribute('autocomplete', 'off');
 
             // Hide the cursor when the input is focused
-            input.addEventListener("focus", function() {
+            input.addEventListener("focus", function () {
                 if (cursorSpan) {
                     cursorSpan.style.visibility = 'hidden';
                 }
             });
 
-            input.addEventListener("blur", function() {
+            input.addEventListener("blur", function () {
                 if (cursorSpan) {
                     cursorSpan.style.visibility = 'visible';
                 }
             });
 
             // Allow pressing Enter to submit the input
-            input.addEventListener("keypress", function(event) {
+            input.addEventListener("keypress", function (event) {
                 if (event.key === "Enter") {
                     event.preventDefault();
                     document.querySelector(".submit-btn").click();
@@ -237,7 +237,7 @@ function displayOptions(options, inputFields) {
         submitButton.addEventListener('click', () => collectInputData(inputFields));
 
         // Apply GSAP stagger to the input fields and the submit button
-        gsap.from(optionButtonsElement.children, { duration: 1, y: -10, autoAlpha: 0, stagger: 0.2});
+        gsap.from(optionButtonsElement.children, { duration: 1, y: -10, autoAlpha: 0, stagger: 0.2 });
     } else {
         options.forEach(option => {
             const nextTextNode = textNodes.find(node => node.id === option.nextNode);
@@ -281,17 +281,17 @@ function collectInputData(inputFields) {
 }
 
 function showOption(option) {
-  return option.requiredState == null || option.requiredState(state)
+    return option.requiredState == null || option.requiredState(state)
 }
 
 function selectOption(option) {
-  const nextNodeNodeId = option.nextNode
-  if (nextNodeNodeId <= 0) {
-    return startGame()
-  }
-  state = Object.assign(state, option.setState)
-  showTextNode(nextNodeNodeId)
-  clearOptions()
+    const nextNodeNodeId = option.nextNode
+    if (nextNodeNodeId <= 0) {
+        return startGame()
+    }
+    state = Object.assign(state, option.setState)
+    showTextNode(nextNodeNodeId)
+    clearOptions()
 }
 
 function clearOptions() {
@@ -306,14 +306,14 @@ const textNodes = [
     {
         id: 2,
         singleUse: false,
-        text: 
-        `[SYSTEM INITIALIZATION STARTED]<br/><br/>${user.loginDate}<br/>
+        text:
+            `[SYSTEM INITIALIZATION STARTED]<br/><br/>${user.loginDate}<br/>
         Checking System Integrity... [OK]
         Verifying Kernel Version... [OK]<br/><br/>INITIALIZING DIGITAL TWIN [BOOT SEQUENCE STARTED]<br/><br/>Performing Diagnostic Tests... [OK]
         Activating Digital Twin... [OK]
         Automatically logging into Guest user [COMPLETE]
         Finalizing Boot Sequence and System Configuration... [COMPLETE]<br/><br/>System Status: All Systems ready. Awaiting Input...<br/><br/>--------------------------------------------------------<br/><br/>*${digitalTwin.name}:* System is now operational. How may I assist you?`,
-        navLinks: [{text: "home", link: 2}],
+        navLinks: [{ text: "home", link: 2 }],
         options: [
             {
                 text: `Hi`,
@@ -445,7 +445,7 @@ const textNodes = [
     {
         id: 7,
         singleUse: false,
-        navLinks: [{text: "home", link: 7}],
+        navLinks: [{ text: "home", link: 7 }],
         text: `*${digitalTwin.name}:* Here is an overview of what I can do.`,
         options: [
             {
@@ -546,7 +546,7 @@ const textNodes = [
     {
         id: 12,
         singleUse: false,
-        navLinks: [{text: "home", link: 7}, {text: "archive", link: 12}],
+        navLinks: [{ text: "home", link: 7 }, { text: "archive", link: 12 }],
         text: `*${digitalTwin.name}:* Accessing root directory files. Please hold...<br/><br/>Loading file list... [OK]
         Checking file integrity... [OK]
         Verifying access permissions... [OK]<br/><br/>--------------------------------------------------------<br/><br/>What file or folder would you like to access?`,
@@ -713,7 +713,7 @@ const textNodes = [
     {
         id: 19,
         singleUse: false,
-        navLinks: [{text: "home", link: 7}, {text: "archive", link: 12}, {text: "encrypted", link: 19}],
+        navLinks: [{ text: "home", link: 7 }, { text: "archive", link: 12 }, { text: "encrypted", link: 19 }],
         text: `*${digitalTwin.name}:* Loading encrypted folder "/c3XwGvUToa". Please hold...<br/><br/>Decrypting folder contents... [ERROR]
         Verifying access permissions... [OK]
         Checking folder integrity... [OK]<br/><br/>*${digitalTwin.name}:* It seems that some of the files are either corrupted or encrypted, and it's not possible for me to determine their status at this point in time.`,
@@ -1207,7 +1207,7 @@ const textNodes = [
     {
         id: 61,
         singleUse: false,
-        navLinks: [{text: "home", link: 7}, {text: "about", link: 61}],
+        navLinks: [{ text: "home", link: 7 }, { text: "about", link: 61 }],
         text: `*${digitalTwin.name}:* I'm a digital version of Baldrian Sector, the creator of this interactive page. I'm here to spill the beans (or bytes, I suppose).<br/><br/>Feel free to ask ahead!`,
         options: [
             {
@@ -1240,7 +1240,7 @@ const textNodes = [
     {
         id: 62,
         singleUse: false,
-        navLinks: [{text: "home", link: 7}, {text: "about", link: 61}, {text: "hobbies", link: 62}],
+        navLinks: [{ text: "home", link: 7 }, { text: "about", link: 61 }, { text: "hobbies", link: 62 }],
         text: `*${digitalTwin.name}:* Oh, I've got a few hobbies up my sleeve! Care to pick one, and I'll dive into the details!`,
         options: [
             {
@@ -1261,7 +1261,7 @@ const textNodes = [
     {
         id: 63,
         singleUse: false,
-        navLinks: [{text: "home", link: 7}, {text: "about", link: 61}, {text: "photography", link: 63}],
+        navLinks: [{ text: "home", link: 7 }, { text: "about", link: 61 }, { text: "photography", link: 63 }],
         text: `*${digitalTwin.name}:* Photography, huh? I'd love to chat about it! What aspect of my photography journey are you interested in? Gear, travels, approach, or maybe you'd like to see some of my photos?`,
         options: [
             {
@@ -1286,7 +1286,7 @@ const textNodes = [
     {
         id: 64,
         singleUse: false,
-        navLinks: [{text: "home", link: 7}, {text: "about", link: 61}, {text: "work", link: 64}],
+        navLinks: [{ text: "home", link: 7 }, { text: "about", link: 61 }, { text: "work", link: 64 }],
         text: `*${digitalTwin.name}:* Currently I'm studying and working part time at a wind tunnel. I have previous worked several years in the theater industry as a freelance light and sound designer. I have also been teaching a bit of light/sound design and programming.<br/><br/>Anything that peeks your interest?`,
         options: [
             {
@@ -1423,7 +1423,7 @@ const textNodes = [
     {
         id: 70,
         singleUse: false,
-        navLinks: [{text: "home", link: 7}, {text: "about", link: 61}, {text: "games", link: 70}],
+        navLinks: [{ text: "home", link: 7 }, { text: "about", link: 61 }, { text: "games", link: 70 }],
         text: `*${digitalTwin.name}:* I am a big fan of puzzle games, as you might have already guessed.<br/>I believe playing teaches us a lot about ourselves and problem solving is incredibly fun!`,
         options: [
             {
@@ -1444,7 +1444,7 @@ const textNodes = [
     {
         id: 71,
         singleUse: false,
-        navLinks: [{text: "home", link: 7}, {text: "about", link: 61}, {text: "photography", link: 71}],
+        navLinks: [{ text: "home", link: 7 }, { text: "about", link: 61 }, { text: "photography", link: 71 }],
         text: `*${digitalTwin.name}:* I'm quite passionate about bouldering, finding joy in the physical and mental challenge it offers. Additionally, I enjoy the exhilarating experience of flying in the wind tunnels. Both activities provide unique opportunities for adventure and self-expression, keeping me active and engaged.`,
         options: [
             {
@@ -1521,7 +1521,7 @@ const textNodes = [
     {
         id: 75,
         singleUse: false,
-        navLinks: [{text: "home", link: 7}, {text: "archive", link: 12}, {text: "coding", link: 75}],
+        navLinks: [{ text: "home", link: 7 }, { text: "archive", link: 12 }, { text: "coding", link: 75 }],
         text: `*${digitalTwin.name}:* Here is all of the files within the /coding_projects folder.<br/><br/>Each text file contains links to GitHub repositories with deployment of the respective coding projects.`,
         options: [
             {
@@ -1634,7 +1634,7 @@ const textNodes = [
     {
         id: 80,
         singleUse: false,
-        navLinks: [{text: "home", link: 7}, {text: "archive", link: 12}, {text: "photos", link: 19}],
+        navLinks: [{ text: "home", link: 7 }, { text: "archive", link: 12 }, { text: "photos", link: 19 }],
         text: `*${digitalTwin.name}:* Few old photos, but they seem to be outdated.<br/><br/>One of the disadvantages of taking pictures of other people is that you often don't get any pictures of yourself, since you are the one holding the camera.`,
         options: [
             {
@@ -1755,7 +1755,7 @@ const textNodes = [
     {
         id: 86,
         singleUse: false,
-        text: ` ![me1.jpeg](assets/images/me/me1.JPG)`,
+        text: ` ![me1.jpeg](assets/images/me/me1.jpg)`,
         options: [
             {
                 text: `me2.jpg`,
@@ -1783,7 +1783,7 @@ const textNodes = [
     {
         id: 87,
         singleUse: false,
-        text: `![me2.jpeg](assets/images/me/me2.JPG)`,
+        text: `![me2.jpeg](assets/images/me/me2.jpg)`,
         options: [
             {
                 text: `me1.jpg`,
