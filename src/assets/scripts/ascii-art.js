@@ -22,9 +22,9 @@ new p5(function (p) {
 
         // Responsive video sizing based on screen width
         let scaleFactor;
-        if (p.windowWidth < 420) {
+        if (p.windowWidth < 420 || p.windowHeight < 399) {
             scaleFactor = 10; // Small size for narrow screens
-        } else if (p.windowWidth < 640) {
+        } else if (p.windowWidth < 769 || p.windowHeight < 520) {
             scaleFactor = 6; // Smaller size for mobile screens
         } else {
             scaleFactor = 5; // Original size for larger screens
@@ -40,9 +40,9 @@ new p5(function (p) {
     // Add window resize handler to adjust video size dynamically
     p.windowResized = function () {
         let scaleFactor;
-        if (p.windowWidth < 540) {
+        if (p.windowWidth < 540 || p.windowHeight < 399) {
             scaleFactor = 10; // Small size for narrow screens
-        } else if (p.windowWidth < 640) {
+        } else if (p.windowWidth < 769 || p.windowHeight < 520) {
             scaleFactor = 6; // Smaller size for mobile screens
         } else {
             scaleFactor = 5; // Original size for larger screens
