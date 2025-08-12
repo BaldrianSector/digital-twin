@@ -38,7 +38,7 @@ onMounted(() => {
     </header>
   </div>
 
-  <div class="self-center ascii-parent hidden">
+  <div class="self-center ascii-parent shown">
     <div id="boot-container" class="flex flex-col items-center">
       <div id="ascii-container" class="shown"></div>
       <button id="boot-btn" class="text-sm w-80 mt-10 hover:underline">
