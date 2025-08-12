@@ -7,17 +7,49 @@ new p5(function (p) {
 
     let video;
     let asciiDiv;
+    let originalWidth, originalHeight; // Store original video dimensions
 
     p.setup = function () {
         asciiDiv = p.createDiv();
         asciiDiv.parent('ascii-container');  // Make sure this div appends within a specific container
         p.noCanvas();
         video = p.createVideo(['assets/videos/animation2-cropped.mp4']);
-        video.size(video.width / 5, video.height / 5);  // Adjust video resolution
-        video.volume(0)
+
+        // Store original dimensions immediately after video creation
+        // These will be the actual video file dimensions
+        originalWidth = video.width;
+        originalHeight = video.height;
+
+        // Responsive video sizing based on screen width
+        let scaleFactor;
+        if (p.windowWidth < 420) {
+            scaleFactor = 10; // Small size for narrow screens
+        } else if (p.windowWidth < 640) {
+            scaleFactor = 6; // Smaller size for mobile screens
+        } else {
+            scaleFactor = 5; // Original size for larger screens
+        }
+
+        video.size(originalWidth / scaleFactor, originalHeight / scaleFactor);
+        video.volume(0);
         video.speed(1);
         video.loop();
         video.style('display', 'none');  // Hide the video element completely
+    };
+
+    // Add window resize handler to adjust video size dynamically
+    p.windowResized = function () {
+        let scaleFactor;
+        if (p.windowWidth < 540) {
+            scaleFactor = 10; // Small size for narrow screens
+        } else if (p.windowWidth < 640) {
+            scaleFactor = 6; // Smaller size for mobile screens
+        } else {
+            scaleFactor = 5; // Original size for larger screens
+        }
+
+        // Always calculate from original dimensions to avoid cumulative scaling
+        video.size(originalWidth / scaleFactor, originalHeight / scaleFactor);
     };
 
     p.draw = function () {
@@ -44,4 +76,3 @@ new p5(function (p) {
         asciiDiv.html(asciiImage);
     };
 });
-
