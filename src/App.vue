@@ -24,18 +24,21 @@ onMounted(() => {
 
 <template>
   <div>
-    <header id="header" class="hidden">
-      <div id="navigation" class="container"></div>
+    <header
+      id="header"
+      class="hidden !text-xs !leading-2 sm:!text-sm sm:!leading-4 md:!text-sm md:!leading-6"
+    >
+      <div id="navigation" class="container text-left mb-4 sm:mb-6"></div>
       <div class="container">
-        <div class="w-[800px] max-w-2xl font-mono flex">
-          <p id="text" class="text-left leading-6 inline-block"></p>
+        <div class="md:w-[800px] max-w-2xl font-mono flex">
+          <p id="text" class="text-left inline-block"></p>
         </div>
         <div id="option-buttons" class="btn-grid"></div>
       </div>
     </header>
   </div>
 
-  <div class="self-center ascii-parent">
+  <div class="self-center ascii-parent hidden">
     <div id="boot-container" class="flex flex-col items-center">
       <div id="ascii-container" class="shown"></div>
       <button id="boot-btn" class="text-sm w-80 mt-10 hover:underline">
