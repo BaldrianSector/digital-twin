@@ -252,10 +252,11 @@ function displayOptions(options, inputFields) {
                 button.addEventListener('click', () => selectOption(option));
             }
         });
-
         // Apply GSAP stagger to the option buttons
         gsap.from(optionButtonsElement.children, { duration: 1, y: -6, autoAlpha: 0, stagger: 0.1 });
     }
+    // Scroll to bottom of page
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'instant' });
 }
 
 function collectInputData(inputFields) {
