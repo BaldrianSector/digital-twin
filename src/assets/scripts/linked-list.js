@@ -447,7 +447,7 @@ const textNodes = [
         id: 7,
         singleUse: false,
         navLinks: [{ text: "home", link: 7 }],
-        text: `*${digitalTwin.name}:* Here is an overview of what I can do.`,
+        text: `*${digitalTwin.name}:* Here's an overview of what I can do.`,
         options: [
             {
                 text: `Access availabe files.`,
